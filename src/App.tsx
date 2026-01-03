@@ -1,7 +1,9 @@
+import { MainRouter } from "./routers/MainRouter";
+
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen text-4xl">Hello World</div>
+    <MainRouter />
   )
 }
 
-export default App
+export default App;
