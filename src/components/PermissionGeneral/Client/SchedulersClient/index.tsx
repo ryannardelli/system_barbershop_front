@@ -12,9 +12,9 @@ import {
   MessageCircle,
   Bell,
   Star,
-  Info,
 } from "lucide-react";
 import { ActionButton } from "./ActionButton";
+import { InfoItem } from "./InfoItem";
 
 export function SchedulersClient() {
   return (
@@ -51,17 +51,17 @@ export function SchedulersClient() {
 
         {/* Informações principais */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
-          <Info icon={<Scissors />} label="Serviço" value="Corte Masculino" />
-          <Info icon={<User />} label="Barbeiro" value="João Barber" />
-          <Info icon={<Calendar />} label="Data" value="10/01/2026" />
-          <Info icon={<Clock />} label="Horário" value="15:30" />
+          <InfoItem icon={Scissors} label="Serviço" value="Corte Masculino" />
+          <InfoItem icon={User} label="Barbeiro" value="João Barber" />
+          <InfoItem icon={Calendar} label="Data" value="10/01/2026" />
+          <InfoItem icon={Clock} label="Horário" value="15:30" />
         </div>
 
         {/* Informações extras */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm border-t border-white/10 pt-4">
-          <Info icon={<MapPin />} label="Unidade" value="Centro - Rua A, 123" />
-          <Info icon={<Timer />} label="Duração" value="40 minutos" />
-          <Info icon={<CreditCard />} label="Pagamento" value="Cartão de Crédito" />
+          <InfoItem icon={MapPin} label="Unidade" value="Centro - Rua A, 123" />
+          <InfoItem icon={Timer} label="Duração" value="40 minutos" />
+          <InfoItem icon={CreditCard} label="Pagamento" value="Cartão de Crédito" />
         </div>
 
         {/* Observações */}
