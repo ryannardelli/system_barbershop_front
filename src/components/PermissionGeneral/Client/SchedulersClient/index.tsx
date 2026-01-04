@@ -18,7 +18,7 @@ import { InfoItem } from "./InfoItem";
 
 export function SchedulersClient() {
   return (
-    <section className="min-h-screen space-y-8 bg-primary text-gray-100 p-6 space-y-10">
+    <section className="min-h-screen space-y-8 bg-primary text-gray-100 p-6">
       {/* Header */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>

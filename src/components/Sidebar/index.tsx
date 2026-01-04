@@ -4,7 +4,6 @@ import {
   CalendarCheck,
   Scissors,
   User,
-  LifeBuoy,
   LogOut,
   ChevronLeft
 } from "lucide-react";
@@ -54,9 +53,8 @@ export function Sidebar() {
       <nav className="flex-1 px-3 space-y-1">
         <MenuItem href="/" icon={Home} label="Início" collapsed={collapsed} />
         <MenuItem href="/schedulers-client" icon={CalendarCheck} label="Meus Agendamentos" collapsed={collapsed} />
-        <MenuItem href="/services" icon={Scissors} label="Serviços" collapsed={collapsed} />
+        <MenuItem href="/services-client" icon={Scissors} label="Serviços" collapsed={collapsed} />
         <MenuItem href="/profile" icon={User} label="Meu Perfil" collapsed={collapsed} />
-        <MenuItem href="/support" icon={LifeBuoy} label="Suporte" collapsed={collapsed} />
       </nav>
 
       {/* Footer */}
