@@ -8,6 +8,7 @@ import {
   LogOut,
   ChevronLeft
 } from "lucide-react";
+import { MenuItem } from "../MenuItem";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
@@ -51,11 +52,11 @@ export function Sidebar() {
 
       {/* Menu */}
       <nav className="flex-1 px-3 space-y-1">
-        <MenuItem icon={Home} label="Início" collapsed={collapsed} />
-        <MenuItem icon={CalendarCheck} label="Meus Agendamentos" collapsed={collapsed} />
-        <MenuItem icon={Scissors} label="Serviços" collapsed={collapsed} />
-        <MenuItem icon={User} label="Meu Perfil" collapsed={collapsed} />
-        <MenuItem icon={LifeBuoy} label="Suporte" collapsed={collapsed} />
+        <MenuItem href="/" icon={Home} label="Início" collapsed={collapsed} />
+        <MenuItem href="/schedulers-client" icon={CalendarCheck} label="Meus Agendamentos" collapsed={collapsed} />
+        <MenuItem href="/services" icon={Scissors} label="Serviços" collapsed={collapsed} />
+        <MenuItem href="/profile" icon={User} label="Meu Perfil" collapsed={collapsed} />
+        <MenuItem href="/support" icon={LifeBuoy} label="Suporte" collapsed={collapsed} />
       </nav>
 
       {/* Footer */}
@@ -68,37 +69,5 @@ export function Sidebar() {
         />
       </div>
     </aside>
-  );
-}
-
-/* Item reutilizável */
-function MenuItem({
-  icon: Icon,
-  label,
-  collapsed,
-  danger = false,
-}: {
-  icon: any;
-  label: string;
-  collapsed: boolean;
-  danger?: boolean;
-}) {
-  return (
-    <a
-      href="#"
-      className={`
-        group flex items-center gap-3 px-4 py-3 rounded-lg
-        text-sm font-medium
-        transition-all
-        ${
-          danger
-            ? "text-red-400 hover:bg-red-500/10"
-            : "text-gray-300 hover:bg-white/5 hover:text-white"
-        }
-      `}
-    >
-      <Icon className="w-5 h-5 shrink-0" />
-      {!collapsed && <span>{label}</span>}
-    </a>
   );
 }
