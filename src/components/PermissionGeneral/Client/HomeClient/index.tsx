@@ -74,10 +74,10 @@ export function HomeClient() {
         <h2 className="font-semibold">Serviços</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          <ServiceCard title="Corte Masculino" price="R$ 40" />
-          <ServiceCard title="Barba" price="R$ 30" />
-          <ServiceCard title="Sobrancelha" price="R$ 15" />
-          <ServiceCard title="Plano Mensal" price="R$ 120" />
+          <ServiceCard title="Corte Masculino" price={40} />
+          <ServiceCard title="Barba" price={30} />
+          <ServiceCard title="Sobrancelha" price={15} />
+          <ServiceCard title="Plano Mensal" price={120} />
         </div>
       </section>
 
