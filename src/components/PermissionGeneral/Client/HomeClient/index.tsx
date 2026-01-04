@@ -126,22 +126,3 @@ export function HomeClient() {
     </div>
   );
 }
-
-// function BarberCard({ name }) {
-//   return (
-//     <div className="bg-primary/80 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
-//       <div className="w-12 h-12 rounded-full bg-secondary/20 text-secondary flex items-center justify-center">
-//         <User />
-//       </div>
-
-//       <div>
-//         <p className="font-medium">{name}</p>
-//         <div className="flex gap-1 text-secondary">
-//           {Array.from({ length: 5 }).map((_, i) => (
-//             <Star key={i} size={14} />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
