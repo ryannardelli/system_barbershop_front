@@ -9,7 +9,7 @@ export default function MainTemplate({ children }: MainTemplateProps) {
     <>
       <Sidebar />
 
-      <div className="ml-0 ml-24 transition-all">
+      <div className="md:ml-20 transition-all">
            {children}
       </div>
     </>

@@ -4,6 +4,7 @@ import { Register } from "../../pages/public/Register";
 import { SchedulersUser } from "../../pages/user/SchedulersUser";
 import { HomeUser } from "../../pages/user/HomeUser";
 import { ServicesUser } from "../../pages/user/ServicesUser";
+import { ProfileUser } from "../../pages/user/ProfileUser";
 export function MainRouter() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ export function MainRouter() {
         <Route path="/register" element={<Register />} />
 
         <Route path="/" element={<HomeUser />} />
+        <Route path="/profile" element={<ProfileUser />} />
         <Route path="/schedulers-client" element={<SchedulersUser />} />
         <Route path="/services-client" element={<ServicesUser />} />
       </Routes>
