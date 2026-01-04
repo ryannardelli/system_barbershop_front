@@ -1,4 +1,5 @@
 import img from '../../../public/img/login.svg';
+import { AuthImage } from '../AuthImage';
 
 export function FormLogin() {
   return (
@@ -7,11 +8,7 @@ export function FormLogin() {
 
         {/* Lado imagem */}
         <div className="max-md:hidden lg:col-span-3 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] p-12 flex items-center justify-center">
-          <img
-            src={img}
-            className="w-3/4 object-cover rounded-xl opacity-90"
-            alt="Barbearia"
-          />
+          <AuthImage src={img} className='w-3/4 object-cover rounded-xl opacity-90' altImage='Barbearia' />
         </div>
 
         {/* Lado formulário */}

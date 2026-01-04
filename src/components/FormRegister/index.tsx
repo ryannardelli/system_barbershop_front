@@ -1,5 +1,6 @@
 import { useState } from "react";
 import imgRegister from "../../../public/img/register.svg";
+import { AuthImage } from "../AuthImage";
 
 type FormData = {
   name: string;
@@ -44,11 +45,7 @@ export function FormRegister() {
 
             {/* Imagem */}
             <div className="p-4 flex items-center justify-center bg-[var(--primary)]">
-              <img
-                src={imgRegister}
-                className="max-w-[90%] h-80 object-contain"
-                alt="Cadastro"
-              />
+              <AuthImage src={imgRegister} className="max-w-[90%] h-80 object-contain" altImage="Cadastro" />
             </div>
 
             {/* Form */}
