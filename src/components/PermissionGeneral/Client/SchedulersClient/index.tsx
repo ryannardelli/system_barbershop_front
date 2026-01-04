@@ -12,7 +12,9 @@ import {
   MessageCircle,
   Bell,
   Star,
+  Info,
 } from "lucide-react";
+import { ActionButton } from "./ActionButton";
 
 export function SchedulersClient() {
   return (
@@ -28,7 +30,7 @@ export function SchedulersClient() {
           </p>
         </div>
 
-        <button className="bg-secondary text-primary px-6 py-2.5 rounded-xl font-semibold hover:brightness-110 transition">
+        <button className="bg-secondary cursor-pointer text-primary px-6 py-2.5 rounded-xl font-semibold hover:brightness-110 transition">
           Novo agendamento
         </button>
       </header>
@@ -93,53 +95,5 @@ export function SchedulersClient() {
         </div>
       </div>
     </section>
-  );
-}
-
-/* ---------- Componentes auxiliares ---------- */
-
-function Info({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="flex items-start gap-3 text-white">
-      <span className="text-secondary mt-0.5">{icon}</span>
-      <div>
-        <p className="text-xs text-white/50">{label}</p>
-        <p className="font-medium">{value}</p>
-      </div>
-    </div>
-  );
-}
-
-function ActionButton({
-  icon,
-  label,
-  danger,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  danger?: boolean;
-}) {
-  return (
-    <button
-      className={`
-        flex items-center gap-2 px-4 py-2 rounded-xl text-sm transition
-        ${
-          danger
-            ? "bg-red-500/10 text-red-400 hover:bg-red-500/20"
-            : "bg-white/5 text-white hover:bg-white/10"
-        }
-      `}
-    >
-      {icon}
-      {label}
-    </button>
   );
 }
