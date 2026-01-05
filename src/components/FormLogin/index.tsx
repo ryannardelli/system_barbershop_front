@@ -7,23 +7,36 @@ import { showMessage } from "../../adapters/showMessage";
 import { useNavigate } from "react-router";
 
 export function FormLogin() {
-  const { login, loginWithGoogle, loading, error } = useAuth();
+  const {
+    login,
+    loginWithGoogle,
+    loading,
+    error,
+    isAuthenticated,
+  } = useAuth();
+
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Exibe erro de login
   useEffect(() => {
     if (error) {
       showMessage.error("Email ou senha inválidos.", true);
     }
   }, [error]);
 
+  // Redireciona quando autenticar (email OU Google)
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/", { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     await login(email, password);
-
-    navigate("/");
   }
 
   return (
@@ -84,7 +97,7 @@ export function FormLogin() {
               />
             </div>
 
-            {/* Botão */}
+            {/* Botão Login */}
             <button
               type="submit"
               disabled={loading}
@@ -104,7 +117,8 @@ export function FormLogin() {
             <button
               type="button"
               onClick={loginWithGoogle}
-              className="w-full py-3 rounded-md flex items-center justify-center gap-3 bg-[#1c1c1c] border border-[#2a2a2a] cursor-pointer"
+              disabled={loading}
+              className="w-full py-3 rounded-md flex items-center justify-center gap-3 bg-[#1c1c1c] border border-[#2a2a2a] disabled:opacity-50 cursor-pointer"
             >
               <img
                 src="https://www.svgrepo.com/show/475656/google-color.svg"

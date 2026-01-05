@@ -1,13 +1,15 @@
 import { useState } from "react";
+
 import {
   Home,
   CalendarCheck,
   Scissors,
   User,
-  LogOut,
   ChevronLeft
 } from "lucide-react";
+
 import { MenuItem } from "../MenuItem";
+import { ButtonLogout } from "../ButtonLogout";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
@@ -59,12 +61,7 @@ export function Sidebar() {
 
       {/* Footer */}
       <div className="px-3 py-4 border-t border-white/10">
-        <MenuItem
-          icon={LogOut}
-          label="Sair"
-          collapsed={collapsed}
-          danger
-        />
+        <ButtonLogout />
       </div>
     </aside>
   );
