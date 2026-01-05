@@ -11,8 +11,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ActionCard } from "./ActionCard";
 import { ServiceCard } from "./ServiceCard";
 import { BarberCard } from "./BarberCard";
+import { useAuth } from "../../../../hooks/useAuth";
 
 export function HomeClient() {
+  const { user } = useAuth();
+
   return (
     <div className="min-h-screen bg-primary text-gray-100 p-6 space-y-10">
 
@@ -20,7 +23,7 @@ export function HomeClient() {
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
           <h1 className="text-2xl font-semibold">
-            Olá, <span className="text-secondary">Ryan</span>
+            Olá, <span className="text-secondary">{user?.name?.split(" ")[0]}</span>
           </h1>
           <p className="text-gray-400">
             Seu próximo visual começa aqui
