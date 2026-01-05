@@ -203,6 +203,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   async function logout() {
     await signOut(auth);
+    dispatch({ type: "LOGOUT" });
   }
 
   async function getToken(): Promise<string | null> {
