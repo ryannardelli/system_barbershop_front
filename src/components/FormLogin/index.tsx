@@ -1,5 +1,6 @@
 import img from '../../../public/img/login.svg';
 import { AuthImage } from '../AuthImage';
+import { RouterLink } from '../RouterLink';
 
 export function FormLogin() {
   return (
@@ -21,9 +22,9 @@ export function FormLogin() {
               </h1>
               <p className="text-sm text-gray-400 mt-2">
                 Não possui conta?
-                <a href="#" className="text-secondary font-medium ml-1 hover:underline">
+                 <RouterLink href="/register" className="text-secondary font-medium ml-1 hover:underline">
                   Criar agora
-                </a>
+                </RouterLink>
               </p>
             </div>
 

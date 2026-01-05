@@ -26,7 +26,7 @@ export function Sidebar() {
       {/* Toggle */}
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="absolute -right-3 top-6 bg-[#020617] border border-white/10 rounded-full p-1 text-gray-300 hover:text-white"
+        className="absolute -right-3 top-6 bg-[#020617] border border-white/10 rounded-full p-1 text-gray-300 hover:text-white cursor-pointer"
       >
         <ChevronLeft
           className={`w-4 h-4 transition-transform ${
