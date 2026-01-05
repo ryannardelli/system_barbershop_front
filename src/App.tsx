@@ -1,10 +1,13 @@
+import { MessageContainer } from "./components/MessageContainer";
 import { AuthProvider } from "./provider/AuthProvider";
 import { MainRouter } from "./routers/MainRouter";
 
 function App() {
   return (
     <AuthProvider>
-      <MainRouter />
+      <MessageContainer>
+        <MainRouter />
+      </MessageContainer>
     </AuthProvider>
   )
 }
