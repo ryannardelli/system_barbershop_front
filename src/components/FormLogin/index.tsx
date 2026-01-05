@@ -20,14 +20,12 @@ export function FormLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Exibe erro de login
   useEffect(() => {
     if (error) {
       showMessage.error("Email ou senha inválidos.", true);
     }
   }, [error]);
 
-  // Redireciona quando autenticar (email OU Google)
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/", { replace: true });
@@ -43,7 +41,6 @@ export function FormLogin() {
     <div className="min-h-screen bg-[#0b0b0b] flex items-center justify-center">
       <div className="grid lg:grid-cols-5 md:grid-cols-2 w-full max-w-6xl shadow-2xl rounded-xl overflow-hidden">
 
-        {/* Lado imagem */}
         <div className="max-md:hidden lg:col-span-3 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] p-12 flex items-center justify-center">
           <AuthImage
             src={img}
@@ -52,7 +49,6 @@ export function FormLogin() {
           />
         </div>
 
-        {/* Lado formulário */}
         <div className="lg:col-span-2 w-full p-10 bg-[#121212] text-gray-100">
           <form className="space-y-6" onSubmit={handleSubmit}>
 
@@ -71,7 +67,6 @@ export function FormLogin() {
               </p>
             </div>
 
-            {/* Email */}
             <div>
               <label className="text-sm text-gray-300 mb-1 block">E-mail</label>
               <input
@@ -84,7 +79,6 @@ export function FormLogin() {
               />
             </div>
 
-            {/* Senha */}
             <div>
               <label className="text-sm text-gray-300 mb-1 block">Senha</label>
               <input
@@ -97,7 +91,6 @@ export function FormLogin() {
               />
             </div>
 
-            {/* Botão Login */}
             <button
               type="submit"
               disabled={loading}
@@ -106,14 +99,12 @@ export function FormLogin() {
               {loading ? "Entrando..." : "Entrar"}
             </button>
 
-            {/* Divisor */}
             <div className="flex items-center gap-4 text-gray-500 text-sm">
               <hr className="flex-1 border-[#2a2a2a]" />
               ou
               <hr className="flex-1 border-[#2a2a2a]" />
             </div>
 
-            {/* Google */}
             <button
               type="button"
               onClick={loginWithGoogle}

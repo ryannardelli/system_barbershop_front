@@ -10,9 +10,13 @@ import {
 
 import { MenuItem } from "../MenuItem";
 import { ButtonLogout } from "../ButtonLogout";
+import { useAuth } from "../../hooks/useAuth";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
+
+  const {user} = useAuth();
+  console.log(user);
 
   return (
     <aside
@@ -40,12 +44,12 @@ export function Sidebar() {
       {/* Perfil */}
       <div className="flex items-center gap-3 px-6 py-6">
         <img
-          src="https://readymadeui.com/profile.webp"
+          src={user?.photoURL || "https://ui-avatars.com/api/?name=" + user?.name}
           className="w-10 h-10 rounded-full border border-white/20"
         />
         {!collapsed && (
           <div>
-            <p className="text-sm font-medium text-white">John Doe</p>
+            <p className="text-sm font-medium text-white">{user?.name}</p>
             <p className="text-xs text-gray-400">Cliente</p>
           </div>
         )}

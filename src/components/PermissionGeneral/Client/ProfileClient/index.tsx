@@ -1,6 +1,9 @@
 import { Camera, Edit2 } from "lucide-react";
+import { useAuth } from "../../../../hooks/useAuth";
 
 export function ProfileClient() {
+  const { user } = useAuth();
+
   return (
     <section className="min-h-screen bg-primary text-gray-100 p-6 space-y-10">
       {/* Header */}
@@ -8,7 +11,7 @@ export function ProfileClient() {
         {/* Foto de perfil */}
         <div className="relative">
           <img
-            src="https://readymadeui.com/profile.webp"
+            src={user?.photoURL || "https://ui-avatars.com/api/?name=" + user?.name}
             alt="Foto de perfil"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-secondary object-cover"
           />
@@ -19,9 +22,8 @@ export function ProfileClient() {
 
         {/* Informações básicas */}
         <div className="flex-1">
-          <h2 className="text-3xl font-bold">Ryan Nardelli</h2>
-          <p className="text-white/70 mt-1">ryan@email.com</p>
-          <p className="text-white/70">+55 11 91234-5678</p>
+          <h2 className="text-3xl font-bold">{user?.name}</h2>
+          <p className="text-white/70 mt-1">{user?.email}</p>
 
           {/* Botão de editar perfil */}
           <button className="mt-4 flex items-center gap-2 bg-secondary hover:bg-yellow-500 text-primary font-semibold px-4 py-2 rounded-lg transition-colors cursor-pointer">
@@ -50,14 +52,6 @@ export function ProfileClient() {
               <input
                 type="email"
                 defaultValue="ryan@email.com"
-                className="w-full p-2 rounded-md bg-primary/70 border border-white/20 text-white focus:outline-none focus:border-secondary"
-              />
-            </div>
-            <div>
-              <label className="text-white/70 block mb-1">Telefone</label>
-              <input
-                type="text"
-                defaultValue="+55 11 91234-5678"
                 className="w-full p-2 rounded-md bg-primary/70 border border-white/20 text-white focus:outline-none focus:border-secondary"
               />
             </div>
