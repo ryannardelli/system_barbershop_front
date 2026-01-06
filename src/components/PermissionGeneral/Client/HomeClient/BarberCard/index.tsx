@@ -1,35 +1,60 @@
 import { Star, User } from "lucide-react";
+import type { JSX } from "react";
+import { SpecialtyTags } from "../../ProfessionalClient/SpecialityTags";
 
 type BarberCardProps = {
   name: string;
+  image: string;
   rating: number;
-}
+  specialty: string;
+  phone: string;
+  icon: JSX.Element;
+};
 
-export function BarberCard({ name, rating }: BarberCardProps) {
+export function BarberCard({
+  name,
+  image,
+  rating,
+  specialty,
+  icon,
+}: BarberCardProps) {
   const totalStars = 5;
 
   return (
-    <div className="bg-primary/80 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
-      <div className="w-12 h-12 rounded-full bg-secondary/20 text-secondary flex items-center justify-center">
-        <User className="w-6 h-6" />
+    <div className="bg-primary/80 border border-white/10 rounded-2xl p-5 flex flex-col gap-4 hover:border-secondary transition-shadow shadow-md">
+
+      <div className="w-full h-full overflow-hidden rounded-xl">
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div>
-        <p className="font-medium">{name}</p>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold text-white">{name}</h2>
+      </div>
 
-        <div className="flex gap-1">
-          {Array.from({ length: totalStars }).map((_, i) => (
-            <Star
-              key={i}
-              size={14}
-              className={
-                i < rating
-                  ? "text-secondary fill-secondary"
-                  : "text-gray-600"
-              }
-            />
-          ))}
-        </div>
+      <p>Especialidades:</p>
+
+      <SpecialtyTags specialties={specialty} />
+
+      {/* <p className="text-white/80 text-sm flex items-center gap-2">
+        <User size={16} className="text-secondary" /> {specialty}
+      </p> */}
+
+      <div className="flex items-center gap-1 mt-1">
+        {Array.from({ length: totalStars }).map((_, i) => (
+          <Star
+            key={i}
+            size={16}
+            className={
+              i < rating
+                ? "text-secondary fill-secondary"
+                : "text-white/40"
+            }
+          />
+        ))}
       </div>
     </div>
   );
