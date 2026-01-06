@@ -6,6 +6,7 @@ import { HomeUser } from "../../pages/user/HomeUser";
 import { ServicesUser } from "../../pages/user/ServicesUser";
 import { ProfileUser } from "../../pages/user/ProfileUser";
 import { PrivateRoute } from "../../components/PrivateRouter";
+import { ProfessionalUser } from "../../pages/user/ProfessionalUser";
 
 export function MainRouter() {
   return (
@@ -30,6 +31,15 @@ export function MainRouter() {
           element={
             <PrivateRoute>
               <ProfileUser />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/professionals"
+          element={
+            <PrivateRoute>
+              <ProfessionalUser />
             </PrivateRoute>
           }
         />

@@ -21,6 +21,7 @@ export function HomeClient() {
 
       {/* HEADER */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        
         <div>
           <h1 className="text-2xl font-semibold">
             Olá, <span className="text-secondary">{user?.name?.split(" ")[0]}</span>

@@ -4,8 +4,9 @@ import {
   Home,
   CalendarCheck,
   Scissors,
-  User,
-  ChevronLeft
+  ChevronLeft,
+  UserCog,
+  Users
 } from "lucide-react";
 
 import { MenuItem } from "../MenuItem";
@@ -60,7 +61,8 @@ export function Sidebar() {
         <MenuItem href="/" icon={Home} label="Início" collapsed={collapsed} />
         <MenuItem href="/schedulers-client" icon={CalendarCheck} label="Meus Agendamentos" collapsed={collapsed} />
         <MenuItem href="/services-client" icon={Scissors} label="Serviços" collapsed={collapsed} />
-        <MenuItem href="/profile" icon={User} label="Meu Perfil" collapsed={collapsed} />
+        <MenuItem href="/professionals" icon={Users} label="Profissionais" collapsed={collapsed} />
+        <MenuItem href="/profile" icon={UserCog} label="Meu Perfil" collapsed={collapsed} />
       </nav>
 
       {/* Footer */}

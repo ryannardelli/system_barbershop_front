@@ -15,20 +15,15 @@ import {
 } from "lucide-react";
 import { ActionButton } from "./ActionButton";
 import { InfoItem } from "./InfoItem";
+import { Heading } from "../../../Heading";
 
 export function SchedulersClient() {
   return (
     <section className="min-h-screen space-y-8 bg-primary text-gray-100 p-6">
       {/* Header */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <h2 className="text-2xl font-semibold text-white">
-            Meus Agendamentos
-          </h2>
-          <p className="text-sm text-white/60">
-            Visualize, gerencie e acompanhe seus cortes
-          </p>
-        </div>
+        
+        <Heading title="Meus Agendamentos" subtitle="Visualize, gerencie e acompanhe seus cortes" />
 
         <button className="bg-secondary cursor-pointer text-primary px-6 py-2.5 rounded-xl font-semibold hover:brightness-110 transition">
           Novo agendamento

@@ -3,6 +3,7 @@ import { services } from "./mock/services";
 import { FilterButton, type FilterOptions } from "../../../FilterButton";
 import { CardGrid } from "../../../CardGrid";
 import { ServiceCard } from "../../../ServiceCard";
+import { Heading } from "../../../Heading";
 
 export type ServiceType = "todos" | "corte" | "barba" | "sobrancelha";
 
@@ -24,15 +25,8 @@ export function ServicesClient() {
   return (
     <section className="min-h-screen w-full space-y-8 bg-primary text-gray-100 p-6">
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-semibold text-white">
-          Serviços Disponíveis
-        </h1>
-        <p className="text-sm text-white/60">
-          Escolha o serviço ideal para você
-        </p>
-      </div>
-
+      <Heading title="Serviços Disponíveis" subtitle="Escolha o serviço ideal para você" />
+      
       {/* Filtros */}
       <FilterButton<ServiceType>
         options={serviceFilters}
