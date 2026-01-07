@@ -2,6 +2,9 @@ import { Star, User } from "lucide-react";
 import type { JSX } from "react";
 import { SpecialtyTags } from "../../ProfessionalClient/SpecialityTags";
 import { BarberActions } from "../../ProfessionalClient/BarberActions";
+import { useAuth } from "../../../../../hooks/useAuth";
+import { BarberInfoButton } from "../../ProfessionalClient/BarberInfoButton";
+import { useRole } from "../../../../../hooks/useRole";
 
 type BarberCardProps = {
   name: string;
@@ -17,9 +20,10 @@ export function BarberCard({
   image,
   rating,
   specialty,
-  icon,
+
 }: BarberCardProps) {
   const totalStars = 5;
+  const { isAdmin } = useRole();
 
   return (
     <div className="bg-primary/80 border border-white/10 rounded-2xl p-5 flex flex-col gap-4 hover:border-secondary transition-shadow shadow-md">
@@ -54,7 +58,8 @@ export function BarberCard({
         ))}
       </div>
 
-      <BarberActions />
+      {isAdmin && <BarberActions />}
+      <BarberInfoButton label="Informações do profissional" onClick={() => console.log("Ver info")} />
     </div>
   );
 }
