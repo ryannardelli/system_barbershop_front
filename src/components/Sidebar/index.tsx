@@ -6,17 +6,21 @@ import {
   Scissors,
   ChevronLeft,
   UserCog,
-  Users
+  Users,
+  UserPlus,
+  Briefcase
 } from "lucide-react";
 
 import { MenuItem } from "../MenuItem";
 import { ButtonLogout } from "../ButtonLogout";
 import { useAuth } from "../../hooks/useAuth";
+import { useRole } from "../../hooks/useRole";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
 
   const { user } = useAuth();
+  const { isAdmin, isClient, isBarber } = useRole();
 
   return (
     <aside
@@ -57,12 +61,67 @@ export function Sidebar() {
 
       {/* Menu */}
       <nav className="flex-1 px-3 space-y-1">
-        <MenuItem href="/" icon={Home} label="Início" collapsed={collapsed} />
-        <MenuItem href="/schedulers-client" icon={CalendarCheck} label="Meus Agendamentos" collapsed={collapsed} />
-        <MenuItem href="/services-client" icon={Scissors} label="Serviços" collapsed={collapsed} />
-        <MenuItem href="/professionals" icon={Users} label="Profissionais" collapsed={collapsed} />
-        <MenuItem href="/profile" icon={UserCog} label="Meu Perfil" collapsed={collapsed} />
-      </nav>
+
+     {(isClient || isBarber) && (
+      <>
+        <MenuItem
+          href="/"
+          icon={Home}
+          label="Início"
+          collapsed={collapsed}
+        />
+
+        <MenuItem
+          href="/schedulers-client"
+          icon={CalendarCheck}
+          label="Meus Agendamentos"
+          collapsed={collapsed}
+        />
+
+        <MenuItem
+          href="/services-client"
+          icon={Scissors}
+          label="Serviços"
+          collapsed={collapsed}
+        />
+
+        <MenuItem
+          href="/professionals"
+          icon={Users}
+          label="Profissionais"
+          collapsed={collapsed}
+        />
+
+        <MenuItem
+          href="/profile"
+          icon={UserCog}
+          label="Meu Perfil"
+          collapsed={collapsed}
+        />
+      </>
+    )}
+    
+      {/* ADMIN ONLY */}
+      {isAdmin && (
+        <>
+          <div className="pt-3 mt-3 border-t border-muted" />
+
+          <MenuItem
+            href="/manager-services"
+            icon={Briefcase}
+            label="Gestão de Serviços"
+            collapsed={collapsed}
+          />
+
+          <MenuItem
+            href="/manage-users"
+            icon={UserPlus}
+            label="Gestão de Usuários"
+            collapsed={collapsed}
+          />
+        </>
+      )}
+    </nav>
 
       {/* Footer */}
       <div className="px-3 py-4 border-t border-white/10">
