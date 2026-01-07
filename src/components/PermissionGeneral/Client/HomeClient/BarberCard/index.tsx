@@ -1,8 +1,7 @@
-import { Star, User } from "lucide-react";
+import { Star } from "lucide-react";
 import type { JSX } from "react";
 import { SpecialtyTags } from "../../ProfessionalClient/SpecialityTags";
 import { BarberActions } from "../../ProfessionalClient/BarberActions";
-import { useAuth } from "../../../../../hooks/useAuth";
 import { BarberInfoButton } from "../../ProfessionalClient/BarberInfoButton";
 import { useRole } from "../../../../../hooks/useRole";
 

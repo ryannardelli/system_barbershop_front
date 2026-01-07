@@ -25,6 +25,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+     if (!firebaseUser) {
+      dispatch({ type: "LOGOUT" });
+      return;
+    }
+    
     const userRef = doc(db, "users", firebaseUser?.uid);
     const snap = await getDoc(userRef);
 
