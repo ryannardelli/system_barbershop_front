@@ -8,9 +8,13 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
+
 import { authReducer, initialAuthState } from "../../reducer/authReducer";
 import { AuthContext } from "./AuthContext";
 import auth from "../../firebase/auth";
+import { ensureUserDocument } from "../../services/userService";
+import db from "../../firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 type AuthProviderProps = {
   children: React.ReactNode;
@@ -20,24 +24,42 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [state, dispatch] = useReducer(authReducer, initialAuthState);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      if (firebaseUser) {
-        dispatch({
-          type: "SET_USER",
-          payload: {
-            uid: firebaseUser.uid,
-            name: firebaseUser.displayName ?? "",
-            email: firebaseUser.email ?? "",
-            photoURL: firebaseUser.photoURL ?? null,
-          },
-        });
-      } else {
-        dispatch({ type: "LOGOUT" });
-      }
-    });
+  const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+     if (!firebaseUser) {
+      dispatch({ type: "LOGOUT" });
+      return;
+    }
+    
+    const userRef = doc(db, "users", firebaseUser?.uid);
+    const snap = await getDoc(userRef);
 
-    return unsubscribe;
-  }, []);
+    if (firebaseUser) {
+      await ensureUserDocument({
+        uid: firebaseUser.uid,
+        name: firebaseUser.displayName,
+        email: firebaseUser.email,
+        photoURL: firebaseUser.photoURL,
+      });
+
+      const userData = snap.data();
+
+      dispatch({
+        type: "SET_USER",
+        payload: {
+          uid: firebaseUser.uid,
+          name: firebaseUser.displayName ?? "",
+          email: firebaseUser.email ?? "",
+          photoURL: firebaseUser.photoURL ?? null,
+          role: userData.role ?? "client",
+        },
+      });
+    } else {
+      dispatch({ type: "LOGOUT" });
+    }
+  });
+
+  return unsubscribe;
+}, []);
 
   async function login(email: string, password: string) {
     try {
@@ -80,17 +102,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       await updateProfile(credential.user, {
         displayName: name,
+        photoURL: null,
       });
 
-      dispatch({
-        type: "SET_USER",
-        payload: {
-          uid: credential.user.uid,
-          name,
-          email: credential.user.email,
-          photoURL: credential.user.photoURL,
-        },
-      });
     } catch (error: any) {
       dispatch({
         type: "SET_ERROR",

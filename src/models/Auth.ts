@@ -1,12 +1,15 @@
+import type { UserRole } from "./User";
+
 export type AuthUser = {
   uid: string;
   name: string | null;
   email: string | null;
   photoURL: string | null;
+  role: UserRole;
 };
 
 export type AuthState = {
-  user: AuthUser | null;
+  state: AuthUser | null;
   isAuthenticated: boolean;
   loading: boolean;
   error: string | null;
