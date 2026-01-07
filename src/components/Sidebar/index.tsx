@@ -16,7 +16,7 @@ import { useAuth } from "../../hooks/useAuth";
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
 
-  const {user} = useAuth();
+  const { user } = useAuth();
   console.log(user);
 
   return (

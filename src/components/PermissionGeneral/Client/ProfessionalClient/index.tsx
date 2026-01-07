@@ -40,14 +40,14 @@ const filteredBarbers =
         <CardGrid
           items={filteredBarbers}
           renderItem={(professional) => (
-            <BarberCard
-              key={professional.id}
-              image={professional.image}
-              name={professional.name}
-              specialty={professional.specialties}
-              rating={professional.rating}
-              actionLabel="Agendar"
-            />
+              <BarberCard
+                key={professional.id}
+                image={professional.image}
+                name={professional.name}
+                specialty={professional.specialties}
+                rating={professional.rating}
+                actionLabel="Agendar"
+              />
           )}
         />
     </section>

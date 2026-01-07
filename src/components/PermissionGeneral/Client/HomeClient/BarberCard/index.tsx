@@ -1,6 +1,7 @@
 import { Star, User } from "lucide-react";
 import type { JSX } from "react";
 import { SpecialtyTags } from "../../ProfessionalClient/SpecialityTags";
+import { BarberActions } from "../../ProfessionalClient/BarberActions";
 
 type BarberCardProps = {
   name: string;
@@ -39,10 +40,6 @@ export function BarberCard({
 
       <SpecialtyTags specialties={specialty} />
 
-      {/* <p className="text-white/80 text-sm flex items-center gap-2">
-        <User size={16} className="text-secondary" /> {specialty}
-      </p> */}
-
       <div className="flex items-center gap-1 mt-1">
         {Array.from({ length: totalStars }).map((_, i) => (
           <Star
@@ -56,6 +53,8 @@ export function BarberCard({
           />
         ))}
       </div>
+
+      <BarberActions />
     </div>
   );
 }

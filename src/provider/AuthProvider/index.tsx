@@ -13,6 +13,8 @@ import { authReducer, initialAuthState } from "../../reducer/authReducer";
 import { AuthContext } from "./AuthContext";
 import auth from "../../firebase/auth";
 import { ensureUserDocument } from "../../services/userService";
+import db from "../../firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 type AuthProviderProps = {
   children: React.ReactNode;
@@ -23,6 +25,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+    const userRef = doc(db, "users", firebaseUser?.uid);
+    const snap = await getDoc(userRef);
+
     if (firebaseUser) {
       await ensureUserDocument({
         uid: firebaseUser.uid,
@@ -31,6 +36,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         photoURL: firebaseUser.photoURL,
       });
 
+      const userData = snap.data();
+
       dispatch({
         type: "SET_USER",
         payload: {
@@ -38,6 +45,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
           name: firebaseUser.displayName ?? "",
           email: firebaseUser.email ?? "",
           photoURL: firebaseUser.photoURL ?? null,
+          role: userData.role ?? "client",
         },
       });
     } else {
