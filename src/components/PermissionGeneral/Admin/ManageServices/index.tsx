@@ -4,6 +4,7 @@ import { ContainerBackground } from "../../../ContainerBackground";
 import { ContainerServices } from "../../../ContainerServices";
 import { Heading } from "../../../Heading";
 import { ServicesOverviewCards } from "./ServicesOverviewCards";
+import { ServicesFilters } from "./ServicesFilters";
 
 export function ManageServices() {
   return(
@@ -14,6 +15,8 @@ export function ManageServices() {
       </ContainerServices>
 
       <ServicesOverviewCards />
+
+      <ServicesFilters />
     </ContainerBackground>
   );
 }

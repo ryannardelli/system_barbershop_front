@@ -47,7 +47,7 @@ export function ServicesStats({
 
   return (
     <div
-      className={`flex items-center gap-4 rounded-2xl border bg-white p-6 shadow-sm transition hover:shadow-md ${styles.border}`}
+      className={`flex items-center gap-4 rounded-2xl border bg-primary p-6 shadow-sm transition hover:shadow-md ${styles.border}`}
     >
       <div
         className={`flex h-12 w-12 items-center justify-center rounded-xl ${styles.iconBg}`}
