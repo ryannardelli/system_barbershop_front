@@ -1,16 +1,16 @@
 import { Info } from "lucide-react";
 
-type BarberInfoButtonProps = {
+type InfoButtonProps = {
   onClick: () => void;
   disabled?: boolean;
   label?: string;
 };
 
-export function BarberInfoButton({
+export function InfoButton({
   onClick,
   disabled = false,
   label
-}: BarberInfoButtonProps) {
+}: InfoButtonProps) {
   return (
     <button
       onClick={onClick}
