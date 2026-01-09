@@ -7,6 +7,7 @@ import { ServicesUser } from "../../pages/user/ServicesUser";
 import { ProfileUser } from "../../pages/user/ProfileUser";
 import { PrivateRoute } from "../../components/PrivateRouter";
 import { ProfessionalUser } from "../../pages/user/ProfessionalUser";
+import { ManageServicesAdmin } from "../../pages/admin/ManageServicesAdmin";
 
 export function MainRouter() {
   return (
@@ -58,6 +59,15 @@ export function MainRouter() {
           element={
             <PrivateRoute>
               <ServicesUser />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/manage-services"
+          element={
+            <PrivateRoute>
+              <ManageServicesAdmin />
             </PrivateRoute>
           }
         />

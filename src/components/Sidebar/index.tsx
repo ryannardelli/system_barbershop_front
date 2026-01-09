@@ -105,16 +105,16 @@ export function Sidebar() {
         <>
           <div className="pt-3 mt-3 border-t border-muted" />
           <MenuItem
-            href="/manager-services"
+            href="/manage-services"
             icon={Briefcase}
-            label="Gestão de Serviços"
+            label="Gerenciar Serviços"
             collapsed={collapsed}
           />
 
           <MenuItem
             href="/manage-users"
             icon={UserPlus}
-            label="Gestão de Usuários"
+            label="Gerenciar Usuários"
             collapsed={collapsed}
           />
         </>
