@@ -1,5 +1,12 @@
+import { ContainerBackground } from "../../../ContainerBackground";
+import { Heading } from "../../../Heading";
+import { ServicesOverviewCards } from "./ServicesOverviewCards";
+
 export function ManageServices() {
   return(
-    <h1>Hello world</h1>
+    <ContainerBackground>
+      <Heading title="Gerenciar Serviços" subtitle="Controle e organização dos serviços" />
+      <ServicesOverviewCards />
+    </ContainerBackground>
   );
 }
