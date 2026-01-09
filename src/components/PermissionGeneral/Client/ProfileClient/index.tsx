@@ -1,6 +1,7 @@
 import { Camera, Edit2 } from "lucide-react";
 import { useAuth } from "../../../../hooks/useAuth";
 import { ContainerBackground } from "../../../ContainerBackground";
+import { ButtonNewFeature } from "../../../ButtonNewFeature";
 
 export function ProfileClient() {
   const { user } = useAuth();
@@ -27,10 +28,7 @@ export function ProfileClient() {
           <p className="text-white/70 mt-1">{user?.email}</p>
 
           {/* Botão de editar perfil */}
-          <button className="mt-4 flex items-center gap-2 bg-secondary hover:bg-yellow-500 text-primary font-semibold px-4 py-2 rounded-lg transition-colors cursor-pointer">
-            <Edit2 size={18} />
-            Editar Perfil
-          </button>
+          <ButtonNewFeature className="mt-4" title="Editar perfil" icon={Edit2} onClick={() => console.log("Click on edit profile!")} />
         </div>
       </div>
 

@@ -17,6 +17,7 @@ import { ActionButton } from "./ActionButton";
 import { InfoItem } from "./InfoItem";
 import { Heading } from "../../../Heading";
 import { ContainerBackground } from "../../../ContainerBackground";
+import { ButtonNewFeature } from "../../../ButtonNewFeature";
 
 export function SchedulersClient() {
   return (
@@ -26,9 +27,7 @@ export function SchedulersClient() {
 
         <Heading title="Meus Agendamentos" subtitle="Visualize, gerencie e acompanhe seus cortes" />
 
-        <button className="bg-secondary cursor-pointer text-primary px-6 py-2.5 rounded-xl font-semibold hover:brightness-110 transition">
-          Novo agendamento
-        </button>
+        <ButtonNewFeature title="Novo agendamento" icon={Calendar} onClick={() => console.log("Click on New scjeduler!")} />
       </header>
 
       {/* Card */}

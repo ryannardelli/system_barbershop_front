@@ -13,6 +13,7 @@ import { ServiceCard } from "./ServiceCard";
 import { BarberCard } from "./BarberCard";
 import { useAuth } from "../../../../hooks/useAuth";
 import { ContainerBackground } from "../../../ContainerBackground";
+import { ButtonNewFeature } from "../../../ButtonNewFeature";
 
 export function HomeClient() {
   const { user } = useAuth();
@@ -31,10 +32,7 @@ export function HomeClient() {
           </p>
         </div>
 
-      <button className="bg-secondary hover:opacity-90 text-black font-medium px-6 py-3 rounded-xl flex items-center gap-2 cursor-pointer">
-          <Calendar size={20} />
-          Novo agendamento
-        </button>
+        <ButtonNewFeature title="Novo agendamento" icon={Calendar} onClick={() => console.log("Button new scheduler click!")} />
       </header>
 
       {/* AÇÕES */}
