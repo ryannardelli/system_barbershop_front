@@ -4,6 +4,7 @@ import { Heading } from "../../../Heading";
 import { professional } from "./mock/professional";
 import { CardGrid } from "../../../CardGrid";
 import { BarberCard } from "../HomeClient/BarberCard";
+import { ContainerBackground } from "../../../ContainerBackground";
 
 type BarberFilterValue = "todos" | "disponiveis" | "master" | "senior" | "junior";
 
@@ -28,7 +29,7 @@ const filteredBarbers =
         );
 
   return(
-    <section className="min-h-screen space-y-8 bg-primary text-gray-100 p-6">
+    <ContainerBackground>
         <Heading title="Nossos Profissionais" subtitle="Especialistas prontos para te atender" />
 
         <FilterButton<BarberFilterValue>
@@ -50,6 +51,6 @@ const filteredBarbers =
               />
           )}
         />
-    </section>
+    </ContainerBackground>
   );
 }

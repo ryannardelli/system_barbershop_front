@@ -15,7 +15,7 @@ export function BarberCard({
   return (
     <div className="bg-primary border border-white/10 rounded-2xl p-5 flex flex-col justify-between hover:border-secondary transition">
       {/* Imagem do barbeiro */}
-      <div className="w-full h-48 mb-4 overflow-hidden rounded-xl">
+      <div className="w-full h-full mb-4 overflow-hidden rounded-xl">
         <img
           src={barber.image}
           alt={barber.name}

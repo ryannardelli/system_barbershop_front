@@ -1,4 +1,7 @@
 import type { ReactNode } from "react";
+import { useRole } from "../../hooks/useRole";
+import { InfoButton } from "../InfoButton";
+import { Actions } from "../Actions";
 
 type ServiceCardProps = {
   image: string;
@@ -19,6 +22,7 @@ export function ServiceCard({
   onAction,
   actionLabel = "Agendar",
 }: ServiceCardProps) {
+  const { isAdmin } = useRole();
   return (
     <div className="bg-primary border border-white/10 rounded-2xl p-5 flex flex-col justify-between hover:border-secondary transition">
       {/* Imagem */}
@@ -58,6 +62,15 @@ export function ServiceCard({
           {actionLabel}
         </button>
       </div>
+
+       {isAdmin ? (
+          <Actions />
+        ) : (
+          <InfoButton
+            label="Informações do serviço"
+            onClick={() => console.log("Ver info")}
+          />
+      )}
     </div>
   );
 }

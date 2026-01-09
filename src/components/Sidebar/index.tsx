@@ -20,7 +20,8 @@ export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
 
   const { user } = useAuth();
-  const { isAdmin, isClient, isBarber } = useRole();
+  console.log(user);
+  const { isAdmin } = useRole();
 
   return (
     <aside
@@ -62,7 +63,6 @@ export function Sidebar() {
       {/* Menu */}
       <nav className="flex-1 px-3 space-y-1">
 
-     {(isClient || isBarber) && (
       <>
         <MenuItem
           href="/"
@@ -99,24 +99,22 @@ export function Sidebar() {
           collapsed={collapsed}
         />
       </>
-    )}
-    
+
       {/* ADMIN ONLY */}
       {isAdmin && (
         <>
           <div className="pt-3 mt-3 border-t border-muted" />
-
           <MenuItem
-            href="/manager-services"
+            href="/manage-services"
             icon={Briefcase}
-            label="Gestão de Serviços"
+            label="Gerenciar Serviços"
             collapsed={collapsed}
           />
 
           <MenuItem
             href="/manage-users"
             icon={UserPlus}
-            label="Gestão de Usuários"
+            label="Gerenciar Usuários"
             collapsed={collapsed}
           />
         </>

@@ -1,9 +1,9 @@
 import { Star } from "lucide-react";
 import type { JSX } from "react";
 import { SpecialtyTags } from "../../ProfessionalClient/SpecialityTags";
-import { BarberActions } from "../../ProfessionalClient/BarberActions";
-import { BarberInfoButton } from "../../ProfessionalClient/BarberInfoButton";
 import { useRole } from "../../../../../hooks/useRole";
+import { InfoButton } from "../../../../InfoButton";
+import { Actions } from "../../../../Actions";
 
 type BarberCardProps = {
   name: string;
@@ -19,20 +19,14 @@ export function BarberCard({
   image,
   rating,
   specialty,
-
 }: BarberCardProps) {
   const totalStars = 5;
   const { isAdmin } = useRole();
 
   return (
     <div className="bg-primary/80 border border-white/10 rounded-2xl p-5 flex flex-col gap-4 hover:border-secondary transition-shadow shadow-md">
-
       <div className="w-full h-full overflow-hidden rounded-xl">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover"
-        />
+        <img src={image} alt={name} className="w-full h-full object-cover" />
       </div>
 
       <div className="flex items-center justify-between">
@@ -49,16 +43,20 @@ export function BarberCard({
             key={i}
             size={16}
             className={
-              i < rating
-                ? "text-secondary fill-secondary"
-                : "text-white/40"
+              i < rating ? "text-secondary fill-secondary" : "text-white/40"
             }
           />
         ))}
       </div>
 
-      {isAdmin && <BarberActions />}
-      <BarberInfoButton label="Informações do profissional" onClick={() => console.log("Ver info")} />
+      {isAdmin ? (
+        <Actions />
+      ) : (
+        <InfoButton
+          label="Informações do profissional"
+          onClick={() => console.log("Ver info")}
+        />
+      )}
     </div>
   );
 }
