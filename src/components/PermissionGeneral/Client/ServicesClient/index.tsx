@@ -4,6 +4,7 @@ import { FilterButton, type FilterOptions } from "../../../FilterButton";
 import { CardGrid } from "../../../CardGrid";
 import { ServiceCard } from "../../../ServiceCard";
 import { Heading } from "../../../Heading";
+import { ContainerBackground } from "../../../ContainerBackground";
 
 export type ServiceType = "todos" | "corte" | "barba" | "sobrancelha";
 
@@ -23,10 +24,10 @@ export function ServicesClient() {
       : services.filter((service) => service.type === filter);
 
   return (
-    <section className="min-h-screen w-full space-y-8 bg-primary text-gray-100 p-6">
+    <ContainerBackground>
       {/* Header */}
       <Heading title="Serviços Disponíveis" subtitle="Escolha o serviço ideal para você" />
-      
+
       {/* Filtros */}
       <FilterButton<ServiceType>
         options={serviceFilters}
@@ -48,7 +49,7 @@ export function ServicesClient() {
           />
         )}
       />
-    </section>
+    </ContainerBackground>
   );
 }
 

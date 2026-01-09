@@ -1,11 +1,12 @@
 import { Camera, Edit2 } from "lucide-react";
 import { useAuth } from "../../../../hooks/useAuth";
+import { ContainerBackground } from "../../../ContainerBackground";
 
 export function ProfileClient() {
   const { user } = useAuth();
 
   return (
-    <section className="min-h-screen bg-primary text-gray-100 p-6 space-y-10">
+    <ContainerBackground>
       {/* Header */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 border-b border-white/20 pb-6">
         {/* Foto de perfil */}
@@ -85,6 +86,6 @@ export function ProfileClient() {
           </div>
         </div>
       </div>
-    </section>
+    </ContainerBackground>
   );
 }

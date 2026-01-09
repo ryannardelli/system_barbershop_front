@@ -12,16 +12,16 @@ import { ActionCard } from "./ActionCard";
 import { ServiceCard } from "./ServiceCard";
 import { BarberCard } from "./BarberCard";
 import { useAuth } from "../../../../hooks/useAuth";
+import { ContainerBackground } from "../../../ContainerBackground";
 
 export function HomeClient() {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-primary text-gray-100 p-6 space-y-10">
-
+      <ContainerBackground>
       {/* HEADER */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        
+
         <div>
           <h1 className="text-2xl font-semibold">
             Olá, <span className="text-secondary">{user?.name?.split(" ")[0]}</span>
@@ -85,7 +85,7 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* BARBEIROS */}
+      {/* PROFISSIONAIS */}
       <section className="space-y-4">
         <h2 className="font-semibold">Barbeiros</h2>
 
@@ -127,6 +127,6 @@ export function HomeClient() {
           WhatsApp
         </button>
       </footer>
-    </div>
+    </ContainerBackground>
   );
 }

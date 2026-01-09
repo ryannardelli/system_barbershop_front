@@ -16,13 +16,14 @@ import {
 import { ActionButton } from "./ActionButton";
 import { InfoItem } from "./InfoItem";
 import { Heading } from "../../../Heading";
+import { ContainerBackground } from "../../../ContainerBackground";
 
 export function SchedulersClient() {
   return (
-    <section className="min-h-screen space-y-8 bg-primary text-gray-100 p-6">
+    <ContainerBackground>
       {/* Header */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        
+
         <Heading title="Meus Agendamentos" subtitle="Visualize, gerencie e acompanhe seus cortes" />
 
         <button className="bg-secondary cursor-pointer text-primary px-6 py-2.5 rounded-xl font-semibold hover:brightness-110 transition">
@@ -89,6 +90,6 @@ export function SchedulersClient() {
           />
         </div>
       </div>
-    </section>
+    </ContainerBackground>
   );
 }
