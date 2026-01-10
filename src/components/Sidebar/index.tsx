@@ -112,7 +112,7 @@ export function Sidebar() {
           />
 
           <MenuItem
-            href="/manage-users"
+            href="/manage-professional"
             icon={UserPlus}
             label="Gerenciar Usuários"
             collapsed={collapsed}

@@ -8,6 +8,7 @@ import { ProfileUser } from "../../pages/user/ProfileUser";
 import { PrivateRoute } from "../../components/PrivateRouter";
 import { ProfessionalUser } from "../../pages/user/ProfessionalUser";
 import { ManageServicesAdmin } from "../../pages/admin/ManageServicesAdmin";
+import { ManageProfessionalAdmin } from "../../pages/admin/ManageProfessionalAdmin";
 
 export function MainRouter() {
   return (
@@ -68,6 +69,15 @@ export function MainRouter() {
           element={
             <PrivateRoute>
               <ManageServicesAdmin />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/manage-professional"
+          element={
+            <PrivateRoute>
+              <ManageProfessionalAdmin />
             </PrivateRoute>
           }
         />
