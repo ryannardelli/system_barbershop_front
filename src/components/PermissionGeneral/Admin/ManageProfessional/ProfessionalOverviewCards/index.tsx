@@ -1,6 +1,6 @@
 import { Award, Star, Trash, UserCheck } from "lucide-react";
 import { ContainerOverviewStats } from "../../../../ContainerOverviewStats";
-import { ServicesStats } from "../../ManageServices/ServicesStats";
+import { ServicesStats } from "../../../../ServicesStats";
 
 export function ProfessionalOverviewCards() {
   return(
