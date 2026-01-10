@@ -3,8 +3,8 @@ import { FilterButton, type FilterOptions } from "../../../FilterButton";
 import { Heading } from "../../../Heading";
 import { professional } from "./mock/professional";
 import { CardGrid } from "../../../CardGrid";
-import { BarberCard } from "../HomeClient/BarberCard";
 import { ContainerBackground } from "../../../ContainerBackground";
+import { BarberCard } from "../../../BarberCard";
 
 type BarberFilterValue = "todos" | "disponiveis" | "master" | "senior" | "junior";
 
@@ -43,10 +43,7 @@ const filteredBarbers =
           renderItem={(professional) => (
               <BarberCard
                 key={professional.id}
-                image={professional.image}
-                name={professional.name}
-                specialty={professional.specialties}
-                rating={professional.rating}
+                barber={professional}
                 actionLabel="Agendar"
               />
           )}

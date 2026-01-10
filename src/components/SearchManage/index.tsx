@@ -1,6 +1,12 @@
 import { Search } from "lucide-react";
 
-export function SearchManage() {
+type SearchManageProps = {
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+}
+
+export function SearchManage({ placeholder = "Buscar", value }: SearchManageProps) {
   return(
     <div className="relative w-full md:max-w-sm">
       <Search
@@ -10,7 +16,9 @@ export function SearchManage() {
 
       <input
         type="text"
-        placeholder="Buscar serviço"
+        value={value}
+        onChange={(e) => console.log("Change made", e)}
+        placeholder={placeholder}
         className="w-full rounded-xl border border-secondary/20 bg-primary py-2 pl-10 pr-4 text-sm focus:border-primary focus:outline-none"
       />
 </div>
