@@ -6,6 +6,9 @@ import { Heading } from "../../../Heading";
 import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
 import { ProfessionalOverviewCards } from "./ProfessionalOverviewCards";
 import { ProfessionalFilter } from "./ProfessionalFilters";
+import { CardGrid } from "../../../CardGrid";
+import { professional } from "../../Client/ProfessionalClient/mock/professional";
+import { BarberCard } from "../../../BarberCard";
 
 export function ManageProfessional() {
   return(
@@ -23,6 +26,16 @@ export function ManageProfessional() {
 
       <ProfessionalFilter />
 
+      <CardGrid
+        items={professional}
+        renderItem={(professional) => (
+          <BarberCard
+            key={professional.id}
+            barber={professional}
+            actionLabel="Agendar"
+          />
+        )}
+      />
     </ContainerBackground>
   );
 }
