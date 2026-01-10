@@ -5,6 +5,7 @@ import { ContainerServices } from "../../../ContainerServices";
 import { Heading } from "../../../Heading";
 import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
 import { ProfessionalOverviewCards } from "./ProfessionalOverviewCards";
+import { ProfessionalFilter } from "./ProfessionalFilters";
 
 export function ManageProfessional() {
   return(
@@ -19,6 +20,8 @@ export function ManageProfessional() {
       </ContainerServices>
 
       <ProfessionalOverviewCards />
+
+      <ProfessionalFilter />
 
     </ContainerBackground>
   );
