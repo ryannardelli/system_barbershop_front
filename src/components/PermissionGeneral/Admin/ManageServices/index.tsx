@@ -8,7 +8,7 @@ import { ServicesFilters } from "./ServicesFilters";
 import { CardGrid } from "../../../CardGrid";
 import { services } from "../../Client/ServicesClient/mock/services";
 import { ServiceCard } from "../../../ServiceCard";
-import { ButtonCollecationDelete } from "../../../ButtonCollectionDelete";
+import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
 
 export function ManageServices() {
   return(
@@ -17,7 +17,7 @@ export function ManageServices() {
         <Heading title="Gerenciar Serviços" subtitle="Controle e organização dos serviços" />
         <ContainerServices className="gap-4">
           <ButtonNewFeature title="Novo serviço" icon={Scissors} onClick={() => console.log("Click on new service!")} />
-          <ButtonCollecationDelete title="Serviços Excluídos" icon={Trash} onClick={() => console.log("Click on button colletcion")} />
+          <ButtonCollectionDelete title="Serviços Excluídos" icon={Trash} onClick={() => console.log("Click on button colletcion")} />
         </ContainerServices>
       </ContainerServices>
 

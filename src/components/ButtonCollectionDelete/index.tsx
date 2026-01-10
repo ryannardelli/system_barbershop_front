@@ -6,7 +6,7 @@ type ButtonCollecationDeleteProps = {
   onClick: () => void;
 }
 
-export function ButtonCollecationDelete({ title, icon: Icon, onClick }: ButtonCollecationDeleteProps) {
+export function ButtonCollectionDelete({ title, icon: Icon, onClick }: ButtonCollecationDeleteProps) {
   return (
     <button
       onClick={onClick}
