@@ -20,7 +20,6 @@ export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
 
   const { user } = useAuth();
-  console.log(user);
   const { isAdmin } = useRole();
 
   return (
