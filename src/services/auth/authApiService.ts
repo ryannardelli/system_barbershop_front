@@ -1,4 +1,4 @@
-const API_URL = "";
+const API_URL = "/api";
 
 export async function syncUser(token: string) {
   const response = await fetch(
