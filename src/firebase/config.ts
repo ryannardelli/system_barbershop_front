@@ -10,16 +10,6 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBDhDNrct6_WSJnlJX0_7RJVnIrKvoWbxI",
-//   authDomain: "barbershop-db23a.firebaseapp.com",
-//   projectId: "barbershop-db23a",
-//   storageBucket: "barbershop-db23a.firebasestorage.app",
-//   messagingSenderId: "1094386125706",
-//   appId: "1:1094386125706:web:c4c3644d81dec25d289673",
-//   measurementId: "G-7TPGTRCJCR"
-// };
-
 const app = initializeApp(firebaseConfig);
 
 export default app;
