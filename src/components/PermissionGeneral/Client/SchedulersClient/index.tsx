@@ -16,8 +16,8 @@ import {
 import { ActionButton } from "./ActionButton";
 import { InfoItem } from "./InfoItem";
 import { Heading } from "../../../Heading";
-import { ContainerBackground } from "../../../ContainerBackground";
 import { ButtonNewFeature } from "../../../ButtonNewFeature";
+import { ContainerBackground } from "@/components/ui/ContainerBackground";
 
 export function SchedulersClient() {
   return (

@@ -2,8 +2,8 @@ import { Star } from "lucide-react";
 import type { JSX } from "react";
 import { SpecialtyTags } from "../../ProfessionalClient/SpecialityTags";
 import { useRole } from "../../../../../hooks/useRole";
-import { InfoButton } from "../../../../InfoButton";
 import { Actions } from "../../../../Actions";
+import { InfoButton } from "@/components/ui/InfoButton";
 
 type BarberCardProps = {
   name: string;

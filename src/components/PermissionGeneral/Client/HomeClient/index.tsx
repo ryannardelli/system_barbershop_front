@@ -12,8 +12,8 @@ import { ActionCard } from "./ActionCard";
 import { ServiceCard } from "./ServiceCard";
 import { BarberCard } from "./BarberCard";
 import { useAuth } from "../../../../hooks/useAuth";
-import { ContainerBackground } from "../../../ContainerBackground";
 import { ButtonNewFeature } from "../../../ButtonNewFeature";
+import { ContainerBackground } from "@/components/ui/ContainerBackground";
 
 export function HomeClient() {
   const { user } = useAuth();
