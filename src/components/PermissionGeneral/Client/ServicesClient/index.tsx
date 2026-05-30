@@ -25,17 +25,14 @@ export function ServicesClient() {
 
   return (
     <ContainerBackground>
-      {/* Header */}
       <Heading title="Serviços Disponíveis" subtitle="Escolha o serviço ideal para você" />
 
-      {/* Filtros */}
       <FilterButton<ServiceType>
         options={serviceFilters}
         value={filter}
         onChange={setFilter}
       />
 
-      {/* Cards */}
       <CardGrid
         items={filteredServices}
         renderItem={(service) => (

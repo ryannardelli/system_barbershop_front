@@ -20,7 +20,6 @@ export function HomeClient() {
 
   return (
       <ContainerBackground>
-      {/* HEADER */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
         <div>
@@ -35,14 +34,12 @@ export function HomeClient() {
         <ButtonNewFeature title="Novo agendamento" icon={Calendar} onClick={() => console.log("Button new scheduler click!")} />
       </header>
 
-      {/* AÇÕES */}
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <ActionCard icon={Scissors} title="Corte" subtitle="Estilo na régua" />
         <ActionCard icon={Flame} title="Barba" subtitle="Desenho perfeito" />
         <ActionCard icon={Scissors} title="Combo" subtitle="Corte + Barba" />
       </section>
 
-      {/* AGENDAMENTO */}
       <section className="bg-primary/80 border border-white/10 rounded-2xl p-6 space-y-4">
         <h2 className="flex items-center gap-2 font-semibold">
           <Clock size={18} />
@@ -71,7 +68,6 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* SERVIÇOS */}
       <section className="space-y-4">
         <h2 className="font-semibold">Serviços</h2>
 
@@ -83,7 +79,6 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* PROFISSIONAIS */}
       <section className="space-y-4">
         <h2 className="font-semibold">Barbeiros</h2>
 
@@ -94,7 +89,6 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* HISTÓRICO */}
       <section className="bg-primary/80 border border-white/10 rounded-2xl p-6 space-y-3">
         <h2 className="font-semibold">Últimos serviços</h2>
 
@@ -108,7 +102,6 @@ export function HomeClient() {
         </button>
       </section>
 
-      {/* FOOTER */}
       <footer className="bg-primary/80 border border-white/10 rounded-2xl p-6 grid gap-4 md:grid-cols-3">
         <div className="flex items-center gap-2 text-gray-300">
           <MapPin size={18} />

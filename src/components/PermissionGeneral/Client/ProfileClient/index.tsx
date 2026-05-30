@@ -8,9 +8,7 @@ export function ProfileClient() {
 
   return (
     <ContainerBackground>
-      {/* Header */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 border-b border-white/20 pb-6">
-        {/* Foto de perfil */}
         <div className="relative">
           <img
             src={user?.photoURL || "https://ui-avatars.com/api/?name=" + user?.name}
@@ -22,19 +20,15 @@ export function ProfileClient() {
           </button>
         </div>
 
-        {/* Informações básicas */}
         <div className="flex-1">
           <h2 className="text-3xl font-bold">{user?.name}</h2>
           <p className="text-white/70 mt-1">{user?.email}</p>
 
-          {/* Botão de editar perfil */}
           <ButtonNewFeature className="mt-4" title="Editar perfil" icon={Edit2} onClick={() => console.log("Click on edit profile!")} />
         </div>
       </div>
 
-      {/* Seção de detalhes */}
       <div className="mt-8 grid md:grid-cols-2 gap-6">
-        {/* Campos de informação */}
         <div className="bg-primary/80 p-6 rounded-xl shadow-inner">
           <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2">Informações Pessoais</h3>
           <div className="space-y-3">
@@ -57,7 +51,6 @@ export function ProfileClient() {
           </div>
         </div>
 
-        {/* Seção de senha */}
         <div className="bg-primary/80 p-6 rounded-xl shadow-inner">
           <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2">Segurança</h3>
           <div className="space-y-3">
