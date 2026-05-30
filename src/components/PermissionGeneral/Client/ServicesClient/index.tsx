@@ -4,9 +4,9 @@ import { services } from "./mock/services";
 
 import { CardGrid } from "@/components/ui/CardGrid";
 import { FilterButton, FilterOptions } from "@/components/FilterButton";
-import { Heading } from "@/components/Heading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { Heading } from "@/components/ui/Heading";
 
 export type ServiceType = "todos" | "corte" | "barba" | "sobrancelha";
 

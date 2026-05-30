@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { FilterButton, type FilterOptions } from "../../../FilterButton";
-import { Heading } from "../../../Heading";
 import { professional } from "./mock/professional";
-import { BarberCard } from "../../../BarberCard";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { BarberCard } from "@/components/domain/BarberCard";
+import { Heading } from "@/components/ui/Heading";
 
 type BarberFilterValue = "todos" | "disponiveis" | "master" | "senior" | "junior";
 

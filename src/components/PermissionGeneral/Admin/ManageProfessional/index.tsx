@@ -1,19 +1,20 @@
 import { Trash, UserPlus } from "lucide-react";
 import { ButtonNewFeature } from "../../../ButtonNewFeature";
 import { ContainerServices } from "../../../ContainerServices";
-import { Heading } from "../../../Heading";
 import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
 import { ProfessionalOverviewCards } from "./ProfessionalOverviewCards";
 import { ProfessionalFilter } from "./ProfessionalFilters";
 import { professional } from "../../Client/ProfessionalClient/mock/professional";
-import { BarberCard } from "../../../BarberCard";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { BarberCard } from "@/components/domain/BarberCard";
+import { Heading } from "@/components/ui/Heading";
 
 export function ManageProfessional() {
   return(
     <ContainerBackground>
       <ContainerServices>
+
         <Heading title="Gerenciar Profissionais" subtitle="Controle e organização de profissionais" />
 
         <ContainerServices className="gap-4">
