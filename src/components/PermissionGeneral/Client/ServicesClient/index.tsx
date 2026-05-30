@@ -1,10 +1,12 @@
 import { useState } from "react";
+
 import { services } from "./mock/services";
-import { FilterButton, type FilterOptions } from "../../../FilterButton";
-import { CardGrid } from "../../../CardGrid";
-import { ServiceCard } from "../../../ServiceCard";
-import { Heading } from "../../../Heading";
-import { ContainerBackground } from "../../../ContainerBackground";
+
+import { CardGrid } from "@/components/ui/CardGrid";
+import { FilterButton, FilterOptions } from "@/components/FilterButton";
+import { ContainerBackground } from "@/components/ContainerBackground";
+import { Heading } from "@/components/Heading";
+import { ServiceCard } from "@/components/ServiceCard";
 
 export type ServiceType = "todos" | "corte" | "barba" | "sobrancelha";
 

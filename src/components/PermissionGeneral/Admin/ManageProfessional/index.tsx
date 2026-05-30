@@ -6,9 +6,9 @@ import { Heading } from "../../../Heading";
 import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
 import { ProfessionalOverviewCards } from "./ProfessionalOverviewCards";
 import { ProfessionalFilter } from "./ProfessionalFilters";
-import { CardGrid } from "../../../CardGrid";
 import { professional } from "../../Client/ProfessionalClient/mock/professional";
 import { BarberCard } from "../../../BarberCard";
+import { CardGrid } from "@/components/ui/CardGrid";
 
 export function ManageProfessional() {
   return(

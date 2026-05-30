@@ -2,9 +2,9 @@ import { useState } from "react";
 import { FilterButton, type FilterOptions } from "../../../FilterButton";
 import { Heading } from "../../../Heading";
 import { professional } from "./mock/professional";
-import { CardGrid } from "../../../CardGrid";
 import { ContainerBackground } from "../../../ContainerBackground";
 import { BarberCard } from "../../../BarberCard";
+import { CardGrid } from "@/components/ui/CardGrid";
 
 type BarberFilterValue = "todos" | "disponiveis" | "master" | "senior" | "junior";
 

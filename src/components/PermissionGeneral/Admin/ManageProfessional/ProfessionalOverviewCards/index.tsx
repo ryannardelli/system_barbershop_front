@@ -1,7 +1,7 @@
 import { Award, Star, Trash, UserCheck } from "lucide-react";
 
 import { ContainerOverviewStats } from "@/components/ui/ContainerOverviewStats";
-import { ServicesStats } from "@/components/ServicesStats";
+import { ServicesStats } from "@/components/domain/ServicesStats";
 
 export function ProfessionalOverviewCards() {
   return(

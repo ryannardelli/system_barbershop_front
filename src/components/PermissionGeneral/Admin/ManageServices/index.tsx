@@ -5,10 +5,10 @@ import { ContainerServices } from "../../../ContainerServices";
 import { Heading } from "../../../Heading";
 import { ServicesOverviewCards } from "./ServicesOverviewCards";
 import { ServicesFilters } from "./ServicesFilters";
-import { CardGrid } from "../../../CardGrid";
 import { services } from "../../Client/ServicesClient/mock/services";
 import { ServiceCard } from "../../../ServiceCard";
 import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
+import { CardGrid } from "@/components/ui/CardGrid";
 
 export function ManageServices() {
   return(

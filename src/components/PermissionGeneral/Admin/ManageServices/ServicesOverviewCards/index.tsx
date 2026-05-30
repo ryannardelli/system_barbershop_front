@@ -1,7 +1,7 @@
 import { CheckCircle, DollarSign, Trash, TrendingUp } from "lucide-react";
 
 import { ContainerOverviewStats } from "@/components/ui/ContainerOverviewStats";
-import { ServicesStats } from "@/components/ServicesStats";
+import { ServicesStats } from "@/components/domain/ServicesStats";
 
 export function ServicesOverviewCards() {
   return (
