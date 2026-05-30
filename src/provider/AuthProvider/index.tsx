@@ -137,7 +137,7 @@ export function AuthProvider({
 
       const token =
         await credential.user.getIdToken();
-
+        
       await syncUser(token);
     } catch (error: any) {
       dispatch({

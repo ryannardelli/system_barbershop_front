@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import img from "../../../public/img/login.svg";
-import { AuthImage } from "../AuthImage";
-import { RouterLink } from "../RouterLink";
-import { useAuth } from "../../hooks/useAuth";
-import { showMessage } from "../../adapters/showMessage";
 import { useNavigate } from "react-router";
+
+import { AuthImage } from "@/components/ui/AuthImage";
+import { RouterLink } from "@/components/RouterLink";
+
+import { showMessage } from "@/adapters/showMessage";
+
+import { useAuth } from "@/hooks/useAuth";
 
 export function FormLogin() {
   const {
@@ -43,7 +45,7 @@ export function FormLogin() {
 
         <div className="max-md:hidden lg:col-span-3 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] p-12 flex items-center justify-center">
           <AuthImage
-            src={img}
+            src='/img/login.svg'
             className="w-3/4 object-cover rounded-xl opacity-90"
             altImage="Barbearia"
           />

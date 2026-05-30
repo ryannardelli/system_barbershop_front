@@ -1,7 +1,8 @@
 import { useState } from "react";
-import imgRegister from "../../../public/img/register.svg";
-import { AuthImage } from "../AuthImage";
-import { useAuth } from "../../hooks/useAuth";
+
+import { AuthImage } from "@/components/ui/AuthImage";
+
+import { useAuth } from "@/hooks/useAuth";
 
 type FormData = {
   name: string;
@@ -71,30 +72,26 @@ export function FormRegister() {
       <div className="bg-white md:rounded-b-full">
         <div className="grid md:grid-cols-2 max-w-7xl w-full shadow-2xl relative overflow-hidden">
 
-          {/* Imagem */}
           <div className="p-4 flex items-center justify-center bg-[var(--primary)]">
             <AuthImage
-              src={imgRegister}
+              src='/img/register.svg'
               className="max-w-[90%] h-80 object-contain"
               altImage="Cadastro"
             />
           </div>
 
-          {/* Form */}
           <div className="flex items-center p-6 max-w-md w-full mx-auto">
             <form className="w-full" onSubmit={handleSubmit}>
               <h1 className="text-3xl font-bold text-[var(--primary)] text-center mb-8">
                 Criar Conta
               </h1>
 
-              {/* ERROS */}
               {(localError || error) && (
                 <p className="mb-4 text-sm text-red-600 text-center">
                   {localError || error}
                 </p>
               )}
 
-              {/* Step 1 */}
               {step === 1 && (
                 <>
                   <label className="text-sm font-semibold text-[var(--primary)] mb-2 block">
