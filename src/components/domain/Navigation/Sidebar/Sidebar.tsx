@@ -11,10 +11,10 @@ import {
   Briefcase
 } from "lucide-react";
 
-import { MenuItem } from "../MenuItem";
 import { useRole } from "@/hooks/useRole";
 import { useAuth } from "@/hooks/useAuth";
 import { ButtonLogout } from "@/components/domain/Auth/ButtonLogout";
+import { MenuItem } from "@/components/MenuItem";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
