@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useRole } from "../../hooks/useRole";
-import { Actions } from "../Actions";
 import { InfoButton } from "@/components/ui/Button/InfoButton";
+import { ContainerActions } from "@/components/ui/Container/ContainerActions";
 
 type ServiceCardProps = {
   image: string;
@@ -63,7 +63,7 @@ export function ServiceCard({
       </div>
 
        {isAdmin ? (
-          <Actions />
+          <ContainerActions />
         ) : (
           <InfoButton
             label="Informações do serviço"

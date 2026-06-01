@@ -5,8 +5,8 @@ import type { JSX } from "react";
 import { useRole } from "@/hooks/useRole";
 
 import { SpecialtyTags } from "@/components/PermissionGeneral/Client/ProfessionalClient/SpecialityTags";
-import { Actions } from "@/components/Actions";
 import { InfoButton } from "@/components/ui/Button/InfoButton";
+import { ContainerActions } from "@/components/ui/Container/ContainerActions";
 
 type BarberCardProps = {
   name: string;
@@ -53,7 +53,7 @@ export function BarberCard({
       </div>
 
       {isAdmin ? (
-        <Actions />
+        <ContainerActions />
       ) : (
         <InfoButton
           label="Informações do profissional"

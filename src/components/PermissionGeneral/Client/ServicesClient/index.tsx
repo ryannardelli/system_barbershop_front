@@ -3,10 +3,10 @@ import { useState } from "react";
 import { services } from "./mock/services";
 
 import { CardGrid } from "@/components/ui/CardGrid";
-import { FilterButton, FilterOptions } from "@/components/FilterButton";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { Heading } from "@/components/ui/Heading";
+import { FilterButton, FilterOptions } from "@/components/ui/Filter/FilterButton/FilterButton";
 
 export type ServiceType = "todos" | "corte" | "barba" | "sobrancelha";
 

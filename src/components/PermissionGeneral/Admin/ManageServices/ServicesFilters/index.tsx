@@ -1,7 +1,7 @@
 import { CategoryFilter } from "@/components/ui/Filter/CategoryFilter";
-import { FiltersContainer } from "../../../../FiltersContainer";
 import { SearchManage } from "../../../../SearchManage";
 import { StatusFilter } from "@/components/ui/Filter/StatusFilter";
+import { FiltersContainer } from "@/components/ui/Container/FiltersContainer";
 
 export function ServicesFilters() {
 return (

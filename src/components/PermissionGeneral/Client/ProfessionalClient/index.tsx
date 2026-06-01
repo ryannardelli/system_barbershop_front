@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { FilterButton, type FilterOptions } from "../../../FilterButton";
 import { professional } from "./mock/professional";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { BarberCard } from "@/components/domain/BarberCard";
 import { Heading } from "@/components/ui/Heading";
+import { FilterButton, FilterOptions } from "@/components/ui/Filter/FilterButton/FilterButton";
 
 type BarberFilterValue =
   | "todos"
