@@ -1,7 +1,7 @@
-import { CategoryFilter } from "../../../../CategoryFilter";
+import { CategoryFilter } from "@/components/ui/Filter/CategoryFilter";
 import { FiltersContainer } from "../../../../FiltersContainer";
 import { SearchManage } from "../../../../SearchManage";
-import { StatusFilter } from "../../../../StatusFilter";
+import { StatusFilter } from "@/components/ui/Filter/StatusFilter";
 
 export function ProfessionalFilter() {
   return(

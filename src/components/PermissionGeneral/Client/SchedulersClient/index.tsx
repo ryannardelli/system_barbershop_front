@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 import { ActionButton } from "./ActionButton";
 import { InfoItem } from "./InfoItem";
-import { ButtonNewFeature } from "../../../ButtonNewFeature";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { Heading } from "@/components/ui/Heading";
+import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
 
 export function SchedulersClient() {
   return (

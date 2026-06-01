@@ -1,6 +1,6 @@
 import { InfoButton } from "@/components/ui/Button/InfoButton";
 import { DeleteButton } from "@/components/ui/Button/DeleteButton";
-import { EditButton } from "../EditButton";
+import { EditButton } from "@/components/ui/Button/EditButton";
 
 export function Actions() {
   return (

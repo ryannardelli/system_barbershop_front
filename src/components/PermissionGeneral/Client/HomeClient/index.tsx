@@ -6,8 +6,8 @@ import { ActionCard } from "./ActionCard";
 import { ServiceCard } from "./ServiceCard";
 import { BarberCard } from "./BarberCard";
 import { useAuth } from "../../../../hooks/useAuth";
-import { ButtonNewFeature } from "../../../ButtonNewFeature";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
+import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
 
 export function HomeClient() {
   const { user } = useAuth();

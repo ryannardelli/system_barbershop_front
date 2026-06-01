@@ -1,6 +1,4 @@
 import { Trash, UserPlus } from "lucide-react";
-import { ButtonNewFeature } from "../../../ButtonNewFeature";
-import { ContainerServices } from "../../../ContainerServices";
 import { ProfessionalOverviewCards } from "./ProfessionalOverviewCards";
 import { ProfessionalFilter } from "./ProfessionalFilters";
 import { professional } from "../../Client/ProfessionalClient/mock/professional";
@@ -9,6 +7,8 @@ import { ContainerBackground } from "@/components/ui/Container/ContainerBackgrou
 import { BarberCard } from "@/components/domain/BarberCard";
 import { Heading } from "@/components/ui/Heading";
 import { ButtonCollectionDelete } from "@/components/ui/Button/ButtonCollectionDelete";
+import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
+import { ContainerServices } from "@/components/ui/Container/ContainerServices";
 
 export function ManageProfessional() {
   return (

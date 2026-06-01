@@ -1,7 +1,7 @@
 import { Camera, Edit2 } from "lucide-react";
 import { useAuth } from "../../../../hooks/useAuth";
-import { ButtonNewFeature } from "../../../ButtonNewFeature";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
+import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
 
 export function ProfileClient() {
   const { user } = useAuth();
