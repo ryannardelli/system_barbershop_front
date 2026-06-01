@@ -1,6 +1,6 @@
+import { useAuth } from "@/hooks/useAuth";
 import { LogOut } from "lucide-react";
 import { useNavigate } from "react-router";
-import { useAuth } from "../../hooks/useAuth";
 
 export function ButtonLogout() {
   const { logout } = useAuth();

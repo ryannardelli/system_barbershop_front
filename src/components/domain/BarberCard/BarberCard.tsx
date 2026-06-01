@@ -4,9 +4,9 @@ import type { JSX } from "react";
 
 import { useRole } from "@/hooks/useRole";
 
-import { InfoButton } from "@/components/ui/InfoButton";
 import { SpecialtyTags } from "@/components/PermissionGeneral/Client/ProfessionalClient/SpecialityTags";
 import { Actions } from "@/components/Actions";
+import { InfoButton } from "@/components/ui/Button/InfoButton";
 
 type BarberCardProps = {
   name: string;

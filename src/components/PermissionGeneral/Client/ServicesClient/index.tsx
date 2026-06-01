@@ -5,7 +5,7 @@ import { services } from "./mock/services";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { FilterButton, FilterOptions } from "@/components/FilterButton";
 import { ServiceCard } from "@/components/ServiceCard";
-import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { Heading } from "@/components/ui/Heading";
 
 export type ServiceType = "todos" | "corte" | "barba" | "sobrancelha";
@@ -14,11 +14,11 @@ export function ServicesClient() {
   const [filter, setFilter] = useState<ServiceType>("todos");
 
   const serviceFilters: FilterOptions<ServiceType>[] = [
-  { label: "Todos", value: "todos" },
-  { label: "Cortes", value: "corte" },
-  { label: "Barba", value: "barba" },
-  { label: "Sobrancelha", value: "sobrancelha" },
-];
+    { label: "Todos", value: "todos" },
+    { label: "Cortes", value: "corte" },
+    { label: "Barba", value: "barba" },
+    { label: "Sobrancelha", value: "sobrancelha" },
+  ];
 
   const filteredServices =
     filter === "todos"
@@ -27,7 +27,10 @@ export function ServicesClient() {
 
   return (
     <ContainerBackground>
-      <Heading title="Serviços Disponíveis" subtitle="Escolha o serviço ideal para você" />
+      <Heading
+        title="Serviços Disponíveis"
+        subtitle="Escolha o serviço ideal para você"
+      />
 
       <FilterButton<ServiceType>
         options={serviceFilters}
@@ -51,4 +54,3 @@ export function ServicesClient() {
     </ContainerBackground>
   );
 }
-

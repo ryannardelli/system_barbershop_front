@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 
 import { MenuItem } from "../MenuItem";
-import { ButtonLogout } from "../ButtonLogout";
-import { useAuth } from "../../hooks/useAuth";
-import { useRole } from "../../hooks/useRole";
+import { useRole } from "@/hooks/useRole";
+import { useAuth } from "@/hooks/useAuth";
+import { ButtonLogout } from "@/components/domain/Auth/ButtonLogout";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
@@ -33,7 +33,6 @@ export function Sidebar() {
         border-r border-white/10
       `}
     >
-      {/* Toggle */}
       <button
         onClick={() => setCollapsed(!collapsed)}
         className="absolute -right-3 top-6 bg-[#020617] border border-white/10 rounded-full p-1 text-gray-300 hover:text-white cursor-pointer"
@@ -45,7 +44,6 @@ export function Sidebar() {
         />
       </button>
 
-      {/* Perfil */}
       <div className="flex items-center gap-3 px-6 py-6">
         <img
           src={user?.photoURL || "https://ui-avatars.com/api/?name=" + user?.name}
@@ -59,7 +57,6 @@ export function Sidebar() {
         )}
       </div>
 
-      {/* Menu */}
       <nav className="flex-1 px-3 space-y-1">
 
       <>
@@ -99,7 +96,6 @@ export function Sidebar() {
         />
       </>
 
-      {/* ADMIN ONLY */}
       {isAdmin && (
         <>
           <div className="pt-3 mt-3 border-t border-muted" />
@@ -120,7 +116,6 @@ export function Sidebar() {
       )}
     </nav>
 
-      {/* Footer */}
       <div className="px-3 py-4 border-t border-white/10">
         <ButtonLogout />
       </div>

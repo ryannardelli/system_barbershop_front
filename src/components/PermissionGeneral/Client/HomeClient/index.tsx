@@ -1,10 +1,4 @@
-import {
-  Scissors,
-  Flame,
-  Calendar,
-  Clock,
-  MapPin,
-} from "lucide-react";
+import { Scissors, Flame, Calendar, Clock, MapPin } from "lucide-react";
 
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -13,25 +7,27 @@ import { ServiceCard } from "./ServiceCard";
 import { BarberCard } from "./BarberCard";
 import { useAuth } from "../../../../hooks/useAuth";
 import { ButtonNewFeature } from "../../../ButtonNewFeature";
-import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 
 export function HomeClient() {
   const { user } = useAuth();
 
   return (
-      <ContainerBackground>
+    <ContainerBackground>
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-
         <div>
           <h1 className="text-2xl font-semibold">
-            Olá, <span className="text-secondary">{user?.name?.split(" ")[0]}</span>
+            Olá,{" "}
+            <span className="text-secondary">{user?.name?.split(" ")[0]}</span>
           </h1>
-          <p className="text-gray-400">
-            Seu próximo visual começa aqui
-          </p>
+          <p className="text-gray-400">Seu próximo visual começa aqui</p>
         </div>
 
-        <ButtonNewFeature title="Novo agendamento" icon={Calendar} onClick={() => console.log("Button new scheduler click!")} />
+        <ButtonNewFeature
+          title="Novo agendamento"
+          icon={Calendar}
+          onClick={() => console.log("Button new scheduler click!")}
+        />
       </header>
 
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -49,9 +45,7 @@ export function HomeClient() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <p className="font-medium">Corte + Barba</p>
-            <p className="text-sm text-gray-400">
-              João • 10/01 às 15:00
-            </p>
+            <p className="text-sm text-gray-400">João • 10/01 às 15:00</p>
             <span className="inline-block mt-2 text-sm text-secondary">
               Confirmado
             </span>

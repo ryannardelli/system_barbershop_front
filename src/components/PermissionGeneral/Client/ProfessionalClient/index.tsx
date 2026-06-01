@@ -2,52 +2,58 @@ import { useState } from "react";
 import { FilterButton, type FilterOptions } from "../../../FilterButton";
 import { professional } from "./mock/professional";
 import { CardGrid } from "@/components/ui/CardGrid";
-import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { BarberCard } from "@/components/domain/BarberCard";
 import { Heading } from "@/components/ui/Heading";
 
-type BarberFilterValue = "todos" | "disponiveis" | "master" | "senior" | "junior";
+type BarberFilterValue =
+  | "todos"
+  | "disponiveis"
+  | "master"
+  | "senior"
+  | "junior";
 
 export function ProfessionalClient() {
   const [filter, setFilter] = useState<BarberFilterValue>("todos");
 
   const barberFilters: FilterOptions<BarberFilterValue>[] = [
-  { label: "Todos", value: "todos" },
-  { label: "Disponíveis", value: "disponiveis" },
-  { label: "Master Barbers", value: "master" },
-  { label: "Sênior", value: "senior" },
-  { label: "Júnior", value: "junior" },
-];
+    { label: "Todos", value: "todos" },
+    { label: "Disponíveis", value: "disponiveis" },
+    { label: "Master Barbers", value: "master" },
+    { label: "Sênior", value: "senior" },
+    { label: "Júnior", value: "junior" },
+  ];
 
-const filteredBarbers =
+  const filteredBarbers =
     filter === "todos"
       ? professional
       : filter === "disponiveis"
-      ? professional.filter((p) => p.available)
-      : professional.filter((p) =>
-          p.role.toLowerCase().includes(filter)
-        );
+        ? professional.filter((p) => p.available)
+        : professional.filter((p) => p.role.toLowerCase().includes(filter));
 
-  return(
+  return (
     <ContainerBackground>
-        <Heading title="Nossos Profissionais" subtitle="Especialistas prontos para te atender" />
+      <Heading
+        title="Nossos Profissionais"
+        subtitle="Especialistas prontos para te atender"
+      />
 
-        <FilterButton<BarberFilterValue>
-          options={barberFilters}
-          value={filter}
-          onChange={setFilter}
-        />
+      <FilterButton<BarberFilterValue>
+        options={barberFilters}
+        value={filter}
+        onChange={setFilter}
+      />
 
-        <CardGrid
-          items={filteredBarbers}
-          renderItem={(professional) => (
-              <BarberCard
-                key={professional.id}
-                barber={professional}
-                actionLabel="Agendar"
-              />
-          )}
-        />
+      <CardGrid
+        items={filteredBarbers}
+        renderItem={(professional) => (
+          <BarberCard
+            key={professional.id}
+            barber={professional}
+            actionLabel="Agendar"
+          />
+        )}
+      />
     </ContainerBackground>
   );
 }

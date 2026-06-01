@@ -1,5 +1,5 @@
-import { InfoButton } from "@/components/ui/InfoButton";
-import { DeleteButton } from "../DeleteButton";
+import { InfoButton } from "@/components/ui/Button/InfoButton";
+import { DeleteButton } from "@/components/ui/Button/DeleteButton";
 import { EditButton } from "../EditButton";
 
 export function Actions() {

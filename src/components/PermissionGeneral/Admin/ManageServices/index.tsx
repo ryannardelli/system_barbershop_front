@@ -5,19 +5,30 @@ import { ServicesOverviewCards } from "./ServicesOverviewCards";
 import { ServicesFilters } from "./ServicesFilters";
 import { services } from "../../Client/ServicesClient/mock/services";
 import { ServiceCard } from "../../../ServiceCard";
-import { ButtonCollectionDelete } from "../../../ButtonCollectionDelete";
 import { CardGrid } from "@/components/ui/CardGrid";
-import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { Heading } from "@/components/ui/Heading";
+import { ButtonCollectionDelete } from "@/components/ui/Button/ButtonCollectionDelete";
 
 export function ManageServices() {
-  return(
+  return (
     <ContainerBackground>
       <ContainerServices>
-        <Heading title="Gerenciar Serviços" subtitle="Controle e organização dos serviços" />
+        <Heading
+          title="Gerenciar Serviços"
+          subtitle="Controle e organização dos serviços"
+        />
         <ContainerServices className="gap-4">
-          <ButtonNewFeature title="Novo serviço" icon={Scissors} onClick={() => console.log("Click on new service!")} />
-          <ButtonCollectionDelete title="Serviços Excluídos" icon={Trash} onClick={() => console.log("Click on button colletcion")} />
+          <ButtonNewFeature
+            title="Novo serviço"
+            icon={Scissors}
+            onClick={() => console.log("Click on new service!")}
+          />
+          <ButtonCollectionDelete
+            title="Serviços Excluídos"
+            icon={Trash}
+            onClick={() => console.log("Click on button colletcion")}
+          />
         </ContainerServices>
       </ContainerServices>
 

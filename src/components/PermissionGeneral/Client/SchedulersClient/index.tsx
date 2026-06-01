@@ -16,17 +16,23 @@ import {
 import { ActionButton } from "./ActionButton";
 import { InfoItem } from "./InfoItem";
 import { ButtonNewFeature } from "../../../ButtonNewFeature";
-import { ContainerBackground } from "@/components/ui/ContainerBackground";
+import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { Heading } from "@/components/ui/Heading";
 
 export function SchedulersClient() {
   return (
     <ContainerBackground>
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <Heading
+          title="Meus Agendamentos"
+          subtitle="Visualize, gerencie e acompanhe seus cortes"
+        />
 
-        <Heading title="Meus Agendamentos" subtitle="Visualize, gerencie e acompanhe seus cortes" />
-
-        <ButtonNewFeature title="Novo agendamento" icon={Calendar} onClick={() => console.log("Click on New scjeduler!")} />
+        <ButtonNewFeature
+          title="Novo agendamento"
+          icon={Calendar}
+          onClick={() => console.log("Click on New scjeduler!")}
+        />
       </header>
 
       <div className="bg-primary border border-white/10 rounded-2xl p-6 space-y-6 shadow-lg">
@@ -36,9 +42,7 @@ export function SchedulersClient() {
             Confirmado
           </span>
 
-          <span className="text-white font-semibold text-lg">
-            R$ 45,00
-          </span>
+          <span className="text-white font-semibold text-lg">R$ 45,00</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
@@ -51,7 +55,11 @@ export function SchedulersClient() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm border-t border-white/10 pt-4">
           <InfoItem icon={MapPin} label="Unidade" value="Centro - Rua A, 123" />
           <InfoItem icon={Timer} label="Duração" value="40 minutos" />
-          <InfoItem icon={CreditCard} label="Pagamento" value="Cartão de Crédito" />
+          <InfoItem
+            icon={CreditCard}
+            label="Pagamento"
+            value="Cartão de Crédito"
+          />
         </div>
 
         <div className="bg-white/5 rounded-xl p-4 text-sm text-white/80">
@@ -66,19 +74,12 @@ export function SchedulersClient() {
 
         <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
           <ActionButton icon={<RotateCcw size={16} />} label="Reagendar" />
-          <ActionButton
-            icon={<XCircle size={16} />}
-            label="Cancelar"
-            danger
-          />
+          <ActionButton icon={<XCircle size={16} />} label="Cancelar" danger />
           <ActionButton
             icon={<MessageCircle size={16} />}
             label="Falar com barbeiro"
           />
-          <ActionButton
-            icon={<Star size={16} />}
-            label="Avaliar atendimento"
-          />
+          <ActionButton icon={<Star size={16} />} label="Avaliar atendimento" />
         </div>
       </div>
     </ContainerBackground>

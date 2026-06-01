@@ -1,0 +1,1 @@
+export { ButtonCollectionDelete } from './ButtonCollectionDelete';

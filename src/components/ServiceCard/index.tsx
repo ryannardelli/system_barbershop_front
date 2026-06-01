@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useRole } from "../../hooks/useRole";
 import { Actions } from "../Actions";
-import { InfoButton } from "@/components/ui/InfoButton";
+import { InfoButton } from "@/components/ui/Button/InfoButton";
 
 type ServiceCardProps = {
   image: string;
