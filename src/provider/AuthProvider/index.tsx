@@ -15,7 +15,11 @@ import {
   getUserToken,
 } from "../../services/auth/fireBaseAuthService";
 
-import { syncUser } from "../../services/auth/authApiService";
+import {
+  syncUser,
+  getMe,
+} from "../../services/auth/authApiService";
+
 import { authStateListener } from "../../services/auth/authListerner";
 
 type AuthProviderProps = {
@@ -39,11 +43,16 @@ export function AuthProvider({
         }
 
         try {
+          dispatch({
+            type: "SET_LOADING",
+            payload: true,
+          });
+
           const token =
             await firebaseUser.getIdToken();
 
           const userData =
-            await syncUser(token);
+            await getMe(token);
 
           dispatch({
             type: "SET_USER",
@@ -63,10 +72,15 @@ export function AuthProvider({
           dispatch({
             type: "SET_ERROR",
             payload:
-              "Erro ao autenticar usuário",
+              "Erro ao carregar usuário",
           });
 
           dispatch({ type: "LOGOUT" });
+        } finally {
+          dispatch({
+            type: "SET_LOADING",
+            payload: false,
+          });
         }
       }
     );
@@ -84,10 +98,16 @@ export function AuthProvider({
         payload: true,
       });
 
-      await loginWithEmail(
-        email,
-        password
-      );
+      const credential =
+        await loginWithEmail(
+          email,
+          password
+        );
+
+      const token =
+        await credential.user.getIdToken();
+
+      await syncUser(token);
     } catch (error: any) {
       dispatch({
         type: "SET_ERROR",
@@ -95,6 +115,8 @@ export function AuthProvider({
           error.code ??
           "Erro ao fazer login",
       });
+
+      throw error;
     } finally {
       dispatch({
         type: "SET_LOADING",
@@ -110,7 +132,13 @@ export function AuthProvider({
         payload: true,
       });
 
-      await loginGoogle();
+      const credential =
+        await loginGoogle();
+
+      const token =
+        await credential.user.getIdToken();
+        
+      await syncUser(token);
     } catch (error: any) {
       dispatch({
         type: "SET_ERROR",
@@ -118,6 +146,8 @@ export function AuthProvider({
           error.code ??
           "Erro ao fazer login com Google",
       });
+
+      throw error;
     } finally {
       dispatch({
         type: "SET_LOADING",
@@ -137,11 +167,17 @@ export function AuthProvider({
         payload: true,
       });
 
-      await registerUser(
-        name,
-        email,
-        password
-      );
+      const firebaseUser =
+        await registerUser(
+          name,
+          email,
+          password
+        );
+
+      const token =
+        await firebaseUser.getIdToken();
+
+      await syncUser(token);
     } catch (error: any) {
       dispatch({
         type: "SET_ERROR",
@@ -149,6 +185,8 @@ export function AuthProvider({
           error.code ??
           "Erro ao registrar usuário",
       });
+
+      throw error;
     } finally {
       dispatch({
         type: "SET_LOADING",
@@ -158,9 +196,12 @@ export function AuthProvider({
   }
 
   async function logout() {
-    await logoutUser();
-
-    dispatch({ type: "LOGOUT" });
+    try {
+      await logoutUser();
+      dispatch({ type: "LOGOUT" });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async function getToken() {

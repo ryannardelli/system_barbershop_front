@@ -1,4 +1,4 @@
-import { Sidebar } from "../../components/Sidebar";
+import { Sidebar } from "@/components/domain/Navigation/Sidebar";
 
 type MainTemplateProps = {
   children: React.ReactNode;

@@ -1,10 +1,10 @@
-import { ProfessionalClient } from "../../../components/PermissionGeneral/Client/ProfessionalClient";
+import { Professional } from "@/components/features/user/Professional";
 import MainTemplate from "../../../templates/MainTemplate";
 
 export function ProfessionalUser() {
   return(
     <MainTemplate>
-        <ProfessionalClient />
+        <Professional />
     </MainTemplate>
   );
 }

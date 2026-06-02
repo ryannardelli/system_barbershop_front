@@ -1,19 +1,19 @@
 import { Camera, Edit2 } from "lucide-react";
 import { useAuth } from "../../../../hooks/useAuth";
-import { ContainerBackground } from "../../../ContainerBackground";
-import { ButtonNewFeature } from "../../../ButtonNewFeature";
+import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
+import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
 
 export function ProfileClient() {
   const { user } = useAuth();
 
   return (
     <ContainerBackground>
-      {/* Header */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 border-b border-white/20 pb-6">
-        {/* Foto de perfil */}
         <div className="relative">
           <img
-            src={user?.photoURL || "https://ui-avatars.com/api/?name=" + user?.name}
+            src={
+              user?.photoURL || "https://ui-avatars.com/api/?name=" + user?.name
+            }
             alt="Foto de perfil"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-secondary object-cover"
           />
@@ -22,21 +22,24 @@ export function ProfileClient() {
           </button>
         </div>
 
-        {/* Informações básicas */}
         <div className="flex-1">
           <h2 className="text-3xl font-bold">{user?.name}</h2>
           <p className="text-white/70 mt-1">{user?.email}</p>
 
-          {/* Botão de editar perfil */}
-          <ButtonNewFeature className="mt-4" title="Editar perfil" icon={Edit2} onClick={() => console.log("Click on edit profile!")} />
+          <ButtonNewFeature
+            className="mt-4"
+            title="Editar perfil"
+            icon={Edit2}
+            onClick={() => console.log("Click on edit profile!")}
+          />
         </div>
       </div>
 
-      {/* Seção de detalhes */}
       <div className="mt-8 grid md:grid-cols-2 gap-6">
-        {/* Campos de informação */}
         <div className="bg-primary/80 p-6 rounded-xl shadow-inner">
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2">Informações Pessoais</h3>
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2">
+            Informações Pessoais
+          </h3>
           <div className="space-y-3">
             <div>
               <label className="text-white/70 block mb-1">Nome</label>
@@ -57,9 +60,10 @@ export function ProfileClient() {
           </div>
         </div>
 
-        {/* Seção de senha */}
         <div className="bg-primary/80 p-6 rounded-xl shadow-inner">
-          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2">Segurança</h3>
+          <h3 className="text-xl font-semibold mb-4 border-b border-white/20 pb-2">
+            Segurança
+          </h3>
           <div className="space-y-3">
             <div>
               <label className="text-white/70 block mb-1">Nova Senha</label>
@@ -70,7 +74,9 @@ export function ProfileClient() {
               />
             </div>
             <div>
-              <label className="text-white/70 block mb-1">Confirmar Senha</label>
+              <label className="text-white/70 block mb-1">
+                Confirmar Senha
+              </label>
               <input
                 type="password"
                 placeholder="Confirme a nova senha"

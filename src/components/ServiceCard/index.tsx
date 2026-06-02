@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useRole } from "../../hooks/useRole";
-import { InfoButton } from "../InfoButton";
-import { Actions } from "../Actions";
+import { InfoButton } from "@/components/ui/Button/InfoButton";
+import { ContainerActions } from "@/components/ui/Container/ContainerActions";
 
 type ServiceCardProps = {
   image: string;
@@ -25,7 +25,6 @@ export function ServiceCard({
   const { isAdmin } = useRole();
   return (
     <div className="bg-primary border border-white/10 rounded-2xl p-5 flex flex-col justify-between hover:border-secondary transition">
-      {/* Imagem */}
       <div className="w-full h-full mb-4 overflow-hidden rounded-xl">
         <img
           src={image}
@@ -64,7 +63,7 @@ export function ServiceCard({
       </div>
 
        {isAdmin ? (
-          <Actions />
+          <ContainerActions />
         ) : (
           <InfoButton
             label="Informações do serviço"
