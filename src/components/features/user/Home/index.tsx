@@ -2,14 +2,14 @@ import { Scissors, Flame, Calendar, Clock, MapPin } from "lucide-react";
 
 import { FaWhatsapp } from "react-icons/fa";
 
-import { ActionCard } from "./ActionCard";
-import { ServiceCard } from "./ServiceCard";
-import { BarberCard } from "./BarberCard";
-import { useAuth } from "../../../../hooks/useAuth";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
 import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
+import { ActionCard } from "@/components/features/user/Home/ActionCard";
+import { useAuth } from "@/hooks/useAuth";
+import { BarberCard } from "@/components/features/user/Home/BarberCard";
+import { ServiceCard } from "@/components/features/user/Home/ServiceCard";
 
-export function HomeClient() {
+export function Home() {
   const { user } = useAuth();
 
   return (
