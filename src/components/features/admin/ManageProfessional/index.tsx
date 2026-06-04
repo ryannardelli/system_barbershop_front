@@ -1,7 +1,7 @@
 import { Trash, UserPlus } from "lucide-react";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
-import { BarberCard } from "@/components/domain/BarberCard";
+import { BarberCard } from "@/components/domain/Card/BarberCard";
 import { Heading } from "@/components/ui/Heading";
 import { ButtonCollectionDelete } from "@/components/ui/Button/ButtonCollectionDelete";
 import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";

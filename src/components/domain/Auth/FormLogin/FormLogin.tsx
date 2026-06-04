@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 import { AuthImage } from "@/components/ui/AuthImage";
-import { RouterLink } from "@/components/RouterLink";
 
 import { showMessage } from "@/adapters/showMessage";
 
 import { useAuth } from "@/hooks/useAuth";
+import { RouterLink } from "@/components/ui/Menu/RouterLink";
 
 export function FormLogin() {
   const {

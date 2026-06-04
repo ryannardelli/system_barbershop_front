@@ -1,4 +1,4 @@
-import { RouterLink } from "../RouterLink";
+import { RouterLink } from "@/components/ui/Menu/RouterLink";
 
 type MenuItemProps = {
   icon: React.ElementType;

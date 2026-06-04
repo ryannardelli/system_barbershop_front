@@ -1,4 +1,7 @@
-import { StatsVariant, statsVariantStyles } from "@/components/domain/ServicesStats/services-stats.styles";
+import {
+  StatsVariant,
+  statsVariantStyles,
+} from "@/components/domain/Stats/ServicesStats/services-stats.styles";
 import { type LucideIcon } from "lucide-react";
 
 type ServicesStatsProps = {
@@ -28,9 +31,7 @@ export function ServicesStats({
 
       <div>
         <p className="text-sm text-gray-500">{name}</p>
-        <p className={`text-lg font-bold ${styles.valueColor}`}>
-          {rating}
-        </p>
+        <p className={`text-lg font-bold ${styles.valueColor}`}>{rating}</p>
       </div>
     </div>
   );

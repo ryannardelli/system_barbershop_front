@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { useRole } from "../../hooks/useRole";
 import { InfoButton } from "@/components/ui/Button/InfoButton";
 import { ContainerActions } from "@/components/ui/Container/ContainerActions";
+import { useRole } from "@/hooks/useRole";
 
 type ServiceCardProps = {
   image: string;

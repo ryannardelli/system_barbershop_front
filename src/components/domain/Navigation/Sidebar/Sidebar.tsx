@@ -14,7 +14,7 @@ import {
 import { useRole } from "@/hooks/useRole";
 import { useAuth } from "@/hooks/useAuth";
 import { ButtonLogout } from "@/components/domain/Auth/ButtonLogout";
-import { MenuItem } from "@/components/MenuItem";
+import { MenuItem } from "@/components/ui/Menu/MenuItem";
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);

@@ -1,6 +1,6 @@
 import { Navigate } from "react-router";
-import { useAuth } from "../../hooks/useAuth";
-import { SpinnerLoading } from "../SpinnerLoading";
+import { SpinnerLoading } from "@/components/ui/Loading/SpinnerLoading";
+import { useAuth } from "@/hooks/useAuth";
 
 type PrivateRouteProps = {
   children: React.ReactNode;

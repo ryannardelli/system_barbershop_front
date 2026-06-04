@@ -1,0 +1,1 @@
+export { SearchManage } from './SearchManage';

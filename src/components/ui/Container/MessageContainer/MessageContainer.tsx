@@ -7,7 +7,6 @@ type MessageContainerProps = {
 export function MessageContainer({ children }: MessageContainerProps) {
     return(
         <>
-
             {children}
 
             <ToastContainer

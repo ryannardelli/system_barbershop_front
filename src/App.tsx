@@ -1,4 +1,4 @@
-import { MessageContainer } from "./components/MessageContainer";
+import { MessageContainer } from "@/components/ui/Container/MessageContainer";
 import { AuthProvider } from "./provider/AuthProvider";
 import { MainRouter } from "./routers/MainRouter";
 
