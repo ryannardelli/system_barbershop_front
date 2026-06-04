@@ -1,4 +1,4 @@
-import { ManageServices } from "../../../components/PermissionGeneral/Admin/ManageServices";
+import { ManageServices } from "@/components/features/admin/ManageServices";
 import MainTemplate from "../../../templates/MainTemplate";
 
 export function ManageServicesAdmin() {
