@@ -129,3 +129,8 @@ npm install
   ```bash
 npm run dev
    ```
+### If everything is configured correctly, the following service will be available:
+
+`http://localhost:5173`
+
+---
