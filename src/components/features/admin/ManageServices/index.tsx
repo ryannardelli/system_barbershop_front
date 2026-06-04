@@ -1,5 +1,4 @@
 import { Scissors, Trash } from "lucide-react";
-import { services } from "../../Client/ServicesClient/mock/services";
 import { ServiceCard } from "../../../ServiceCard";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { ContainerBackground } from "@/components/ui/Container/ContainerBackground";
@@ -9,6 +8,7 @@ import { ButtonNewFeature } from "@/components/ui/Button/ButtonNewFeature";
 import { ContainerServices } from "@/components/ui/Container/ContainerServices";
 import { ServicesFilters } from "@/components/features/admin/ManageServices/ServicesFilters";
 import { ServicesOverviewCards } from "@/components/features/admin/ManageServices/ServicesOverviewCards";
+import { services } from "@/components/features/user/Services/mock/services";
 
 export function ManageServices() {
   return (

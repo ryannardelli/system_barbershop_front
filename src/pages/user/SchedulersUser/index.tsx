@@ -1,10 +1,10 @@
-import { SchedulersClient } from "../../../components/PermissionGeneral/Client/SchedulersClient";
+import { Scheduler } from "@/components/features/user/Scheduler";
 import MainTemplate from "../../../templates/MainTemplate";
 
 export function SchedulersUser() {
   return(
     <MainTemplate>
-      <SchedulersClient />
+      <Scheduler />
     </MainTemplate>
   );
 }
